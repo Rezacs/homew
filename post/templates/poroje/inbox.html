@@ -7,7 +7,9 @@
 
 salam
     {% for post in posts %}
-        <h1>{{post.writer}}</h1>
+        <h1 style="color: brown;">
+            <a href="/user/{{comment.writer}}">user :{{post.writer}}</a>
+        </h1>
         <h1>{{post.title}}</h1>
         <p>{{post.body}}</p>
         <small>{{post.created_on}}</small>
