@@ -1,0 +1,15 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-12 my-3">
+            <form action="{% url 'delete-tag-mk' tag_id=tag.id %}" method="post">
+                {% csrf_token %}
+                <p>motmaen hastid ke mikhahid <span style="color: red;">{{tag.name}}</span> ro delet konid ?</p>
+                <input type="submit" , value="bezan berim daa!">
+                <br>
+                <a href="{% url 'tag-list' %}">bargasht be safhe tag ha</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

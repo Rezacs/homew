@@ -1,0 +1,15 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-12 my-3">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <p>motmaen hastid ke mikhahid <span style="color: red;">{{user.username}}</span> logout konid ?</p>
+                <input type="submit" , value="bezan berim daa!">
+                <br>
+                <a href="{% url 'dashboard' %}">bargasht be safhe dashboard</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

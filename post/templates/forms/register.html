@@ -1,0 +1,21 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        safhe ye sabt e nam  e shoma 
+        <div class="col-md-12 my-3">
+            <form action="{% url 'register-mk' %}" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" , value="register">
+            </form>
+        </div>
+    </div>
+    {% if message %}
+        <h3 class="message.class_css">
+            {{message.text}}
+        </h3>
+        {{message.text}}
+    {% else %}
+    {% endif %}
+{% endblock content %}

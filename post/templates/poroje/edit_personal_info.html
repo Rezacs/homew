@@ -1,0 +1,23 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-12 my-3">
+            <p>
+                <h2>
+                    username : {{user.username}}
+                </h2>
+            </p>
+            <p>
+                <h2>
+                    email : {{user.email}}
+                </h2>
+            </p>
+            <form action="{% url 'edit-personal-info'  %}" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" , value="bezan berim daa!">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

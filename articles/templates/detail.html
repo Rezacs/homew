@@ -1,0 +1,16 @@
+{% extends "theme.html" %}
+
+<h1>salam</h1>
+
+{% block content %}
+    <div class="container">
+        <h1>{{post.title}}</h1>
+        <h2>{{post.created_on}}</h2>
+        <p>{{post.bode}}</p>
+    </div>
+
+    
+    <br>
+    {{object.title}}
+  
+{% endblock content %}

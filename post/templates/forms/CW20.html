@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax - step 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row my-3">
+            <button id="myBtn"></button>
+            <div class="card w-100">
+                <div class="card-body">
+                  get user list ,
+                  <a href="https://reqres.in/">api sample</a>
+                  <button id="getDataBtn" class="btn btn-primary float-right">get Data</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table responsive" id="userTable">
+                <thead>
+                    <th>username</th>
+                    <th>name</th>
+                    <th>last name</th>
+                    {% comment %} <th>last name</th>
+                    <th>avatar</th>
+                    <th>delete</th> {% endcomment %}
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <script>
+        $(function(){
+        $('#getDataBtn').click(function(){
+            $.get('http://127.0.0.1:8000/customer_list?format=json',function(data,status){
+                console.log('status',status)
+    
+                console.log(data)
+                deleteBtn = "<span class='btn btn-danger removeUser'>delete</span>"
+                
+                $.each(data,function(index,value){
+    
+                    tr_row ="<tr>"
+                        {% comment %} +`<td>${value.id}</td>`
+                        +`<td>${value.email}</td>` {% endcomment %}
+
+                        +
+                            `<td>
+                                <button id="myBtn">${value.user_name}</button>
+                            </td>`
+                        +
+                            `<td>
+                                ${value.first_name}
+                            </td>`
+                        +
+                            `<td>
+                                ${value.last_name}
+                            </td>`
+                        {% comment %} +`<td><img src="${value.avatar}" alt="" style="width:50px" ></td>` {% endcomment %}
+                        +`<td>${deleteBtn}</td>`
+                        +"</tr>"
+                        
+                    // console.log(index +' : ',tr_row)
+                    $('#userTable>tbody').append(tr_row)
+                })           
+            })
+        })
+
+
+        // part 1
+        $('#myBtn').click(function(){
+            alert('delete this user')
+        })
+        // part2
+        // $('body').on('click','.removeUser',function(){
+        //     // $(this).remove()
+
+        //      https://reqres.in/api/users
+        //      http://127.0.0.1:8000/customer_list?format=json
+
+        //     alert('delete this user')
+        // }) http://127.0.0.1:8000/customer_detail/mojdeh
+    })
+
+    </script>
+    
+</body>
+</html>

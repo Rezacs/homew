@@ -1,0 +1,22 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-12 my-3">
+            <div class="col-md-12">
+                <a class="btn btn-sm btn-primary" href="{% url 'tag_mk' %}">sabt tag jadid</a>
+            </div>
+            {% for tag in object_list  %}
+                <p style="border: solid red; margin-top: 30px;">
+                    <a href="{% url 'edit-tag-list' tag_id=tag.id %}">
+                        <b>{{tag.name}}</b>
+                    </a>
+                    <br>
+                    <a class="btn btn-sm btn-danger" href="{% url 'delete-tag-mk' tag_id=tag.id %}">
+                        <small>hazf !</small>
+                    </a> 
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

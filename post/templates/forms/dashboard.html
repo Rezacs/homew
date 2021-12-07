@@ -1,0 +1,101 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="row" style="height: 100%;">
+        <div class="col-md-6">
+            {% if customer.image %}
+                <p>
+                    profile picture :
+                </p>
+                <img src="{{customer.image.url}}" alt="image_of_post" style="width: 400px; height: 400px; border: solid red;">
+            {% else %}
+                <p>
+                    Default profile picture :
+                </p>
+                <img src="{% static 'download.jpeg' %}" alt="image_of_post" style=" border: solid red;">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h1>dashboard</h1>
+            <h2>username : {{user.username}}</h2>
+
+            <h5>
+                <p>
+                    <small>
+                    discription about this user :
+                    </small>
+                </p>
+                <p>
+                    {{customer.desc}}
+                </p>
+            </h5>
+            <hr>
+
+            <a class="btn btn-sm btn-primary" href="post_urls/personal_info">
+                <small>edit personal info</small>
+            </a>
+
+            <a class="btn btn-sm btn-dark" href="post_urls/drafteds">
+                <small>draft posts</small>
+            </a>
+
+            <a class="btn btn-sm btn-primary" href="post_urls/new_password">
+                <small>change password</small>
+            </a>
+            
+            <br>
+
+            <a class="btn btn-sm btn-primary" href="post_urls/new_post" style="margin-top: 30px;">
+                <small>NEW POST</small>
+            </a>
+
+            <a class="btn btn-sm btn-danger" href="post_urls/edit_username" style="margin-top: 30px;">
+                <small>edit username</small>
+            </a>
+
+            <a class="btn btn-sm btn-warning" href="post_urls/inbox" style="margin-top: 30px;">
+                <small>see messages</small>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+    <hr>
+    {% for post in posts %}
+        <h1>{{post.title}}</h1>
+        <p>{{post.shortdesc}}</p>
+        <small>{{post.created_on}}</small>
+        <h3>{{post.customer}}</h3>
+        <!-- <h3>{{post.tag}}</h3> -->
+        {% for t in post.tag.all  %}
+          <p>{{t}}</p>
+        {% endfor %}
+        <p>
+            <a href="class_post_detail/{{post.id}}">show detail</a>
+            <br>
+            <a href="class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
+        </p>
+
+        
+        <p>
+            <a class="btn btn-sm btn-primary" href="post_urls/edit_post/{{post.id}}">
+                <small>edit Post</small>
+            </a>
+        </p>
+        <p>
+            <a class="btn btn-sm btn-danger" href="post_urls/delete_post/{{post.id}}">
+                <small>Delete Post</small>
+            </a>
+        </p>
+
+        <hr>
+    {% endfor %}
+    
+      
+{% endblock content %}

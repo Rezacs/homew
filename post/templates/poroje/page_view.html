@@ -1,0 +1,65 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="row" style="height: 100%;">
+        <div class="col-md-6">
+            <p>
+            profile picture :
+            </p>
+            {% if customer.image %}
+                <img src="{{customer.image.url}}" alt="image_of_post" style="width: 400px; height: 400px; border: solid red;">
+            {% else %}
+                <img src="{% static 'download.jpeg' %}" alt="image_of_post" style=" border: solid red;">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h1>username : {{pointed_user.username}}</h1>
+            <h5>
+                <p>
+                    <small>
+                    discription about this user :
+                    </small>
+                </p>
+                <p>
+                    {{customer.desc}}
+                </p>
+            </h5>
+            {% if user.is_authenticated %}
+                {% if user.username != pointed_user.username %}
+                    <p>
+                        <a class="btn btn-sm btn-primary" href="/post_urls/send_message/{{pointed_user.username}}">
+                            <small>Send message</small>
+                        </a>
+                    </p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-12 ">
+        <div class="row mt-1 g-3 btn-light " style="height: 100%;">
+    {% for post in posts %}
+    <div class="col-md-6 ">
+        <h1>{{post.title}}</h1>
+        <p>{{post.shortdesc}}</p>
+        <small>{{post.created_on | date}}</small>
+        {% for t in post.tag.all  %}
+          <p>{{t}}</p>
+        {% endfor %}
+        <p>
+            <a href="/class_post_detail/{{post.id}}">show detail</a>
+            <br>
+            <a href="/class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
+        </p>
+        <hr>
+    </div>
+    {% endfor %}
+        </div>
+    </div>
+      
+{% endblock content %}

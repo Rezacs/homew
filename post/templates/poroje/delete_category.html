@@ -1,0 +1,15 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-12 my-3">
+            <form action="{% url 'delete-category' category_id=category.id  %}" method="post">
+                {% csrf_token %}
+                <p>motmaen hastid ke mikhahid <span style="color: red;">{{category.name}}</span> ro delet konid ?</p>
+                <input type="submit" , value="bezan berim daa!">
+                <br>
+                <a href="{% url 'category-list' %}">bargasht be safhe category ha</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <h1>resault of search in posts :</h1>
+    <div class="col-md-12 ">
+        <div class="row mt-1 g-3 btn-light " style="height: 100%;">
+    {% for post in posts %}
+    <div class="col-md-6 ">
+        <h1>{{post.title}}</h1>
+        <p>{{post.shortdesc}}</p>
+        <small>{{post.created_on | date}}</small>
+        <h3>{{post.customer}}</h3>
+        <!-- <h3>{{post.tag}}</h3> -->
+        {% for t in post.tag.all  %}
+          <p>{{t}}</p>
+        {% endfor %}
+        <p>
+            <a href="/class_post_detail/{{post.id}}">show detail</a>
+            <br>
+            <a href="/class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
+        </p>
+        <hr>
+    </div>
+    {% endfor %}
+        </div>
+    </div>
+      
+{% endblock content %}

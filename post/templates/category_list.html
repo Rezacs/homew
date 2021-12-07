@@ -1,0 +1,36 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<a class="btn btn-sm btn-primary" href="post_urls/add_category">
+    add category
+</a>
+
+    {% for category in categorys %}
+    <div class="container mt-3" style="text-align: center;">
+        <h1>{{category}}</h1>
+        <small>{{category.created_on | date}}</small>
+        <p>
+            <a href="class_category_detail/{{category.id}}">class_category_detail</a>
+            <br>
+            <a href="class_category_posts/{{category.name}}">class_category_posts</a>
+        </p>
+        <p>
+            <a class="btn btn-sm btn-primary" href="post_urls/edit_category_name/{{category.id}}">
+                <small>edit category name</small>
+            </a>
+        </p>
+        <p>
+            <a class="btn btn-sm btn-danger" href="post_urls/delete_category/{{category.id}}">
+                <small>Delete category</small>
+            </a>
+        </p>
+
+        <hr>
+    </div>
+    {% endfor %}
+    
+
+{% endblock content %}

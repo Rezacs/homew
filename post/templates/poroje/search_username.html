@@ -1,0 +1,22 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <h1>resault of search in usernames :</h1>
+
+    {% for user in users %}
+    <div class="container mt-3" style="text-align: center;">
+        <h1>{{user.username}}</h1>
+        <small>{{user.name}}</small>
+        <small>posts : {{user.post_set.all}}</small>
+        <p>
+            <a href="/user/{{user.username}}">{{user.username}} page</a>
+        </p>
+        <hr>
+    </div>
+    {% endfor %}
+    
+
+{% endblock content %}
