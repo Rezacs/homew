@@ -4,7 +4,7 @@
     <div class="container">
         safhe ye sabt e poste jadid 
         <div class="col-md-12 my-3">
-            <form action="{% url 'new-post' %}" method="post">
+            <form action="{% url 'new-post' %}" method="post" enctype='multipart/form-data'>
                 {% csrf_token %}
                 {{form.as_p}}
                 <input type="submit" , value="register">

@@ -54,9 +54,9 @@ def class_post_slug_view ( request , given_slug ) :
     if user.is_authenticated :
         customer = Customer.objects.get(user_name =user.username)
         check = Post_Likes.objects.filter(post = post).filter(writer = user)
+
     else :
         customer = Customer.objects.get(user_name ='Anonymous')
-        check = False
     form = CommentModelForm()
     form2 = LikePostForm()
     form3 = LikeCommentForm()
@@ -451,7 +451,7 @@ def dashboard ( request ) :
 
 @login_required(login_url='login-mk')
 def add_new_post (request) :
-    form = AddPostForm(None or request.POST)
+    form = AddPostForm(None or request.POST , request.FILES)
     if request.method == "POST" :
         if form.is_valid() :
 
@@ -654,7 +654,7 @@ def edit_personal_info ( request ) :
     form = CustomerEditForm(instance=customer)
     user = User.objects.get(username =request.user.username)
     if request.method == "POST" :
-        form = CustomerEditForm(request.POST , instance=customer)
+        form = CustomerEditForm(request.POST , request.FILES , instance=customer)
         if form.is_valid() :
             form.save()
             messages.add_message(request, messages.SUCCESS , 'profile was edited !')
@@ -808,6 +808,26 @@ def inbox (request ) :
         messages = SendMessage.objects.filter(reciever = user)
 
         return render ( request , 'poroje/inbox.html' , {'pointed_user' : user , 'posts' : messages })
+
+@login_required(login_url='login-mk')
+def delete_message(request,message_id):
+    
+    message = get_object_or_404(SendMessage ,id=message_id)
+    if request.user == message.reciever :    
+        message.delete()
+        messages.add_message(request, messages.SUCCESS, 'message was deleted !')
+        return redirect('/post_urls/inbox')
+    else :
+        return HttpResponse('you dont have permission to do this !')
+
+@login_required(login_url='login-mk')
+def follow(request,username):
+    
+    target_user = get_object_or_404(User ,username=username)    
+    UserConnections.objects.create(following=request.user , follower=target_user)
+    messages.add_message(request, messages.SUCCESS, 'message was deleted !')
+    return redirect('/post_urls/inbox')
+
 
 
 

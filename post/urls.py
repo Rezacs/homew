@@ -26,6 +26,7 @@ urlpatterns = [
     path('search_post' , search_post_title , name = 'search-post' ),
     path('search_username' , search_username , name = 'search-username' ),
     path('delete_comment/<int:comment_id>',delete_comment,name="delete-comment"),
+    path('delete_message/<int:message_id>',delete_message,name="delete-message"),
     path('edit_comment/<int:comment_id>',edit_comment,name="edit-comment"),
     path('personal_info' ,edit_personal_info ,name='edit-personal-info' ),
     path('trash_search_post' , searchPageView.as_view() , name = 'trash-search-post' ),

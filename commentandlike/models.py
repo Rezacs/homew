@@ -107,6 +107,14 @@ class SendMessage(models.Model):
     def __str__(self) -> str:
         return f"{self.writer} {self.reciever} {self.title}"
 
+class UserConnections(models.Model):
+    following = models.ForeignKey(get_user_model() , on_delete=models.PROTECT , blank=True , null=True , related_name='following' )
+    created_on = models.DateTimeField(auto_now_add=True)
+    follower = models.ForeignKey(get_user_model() , on_delete=models.PROTECT , blank=True , null=True , related_name='follower' )
+
+    def __str__(self) -> str:
+        return f"{self.following} --> {self.follower}"
+
 
 
 

@@ -14,5 +14,6 @@ admin.site.register(Post_Comment_reply)
 
 admin.site.register(Comment_for_customer)
 admin.site.register(SendMessage)
+admin.site.register(UserConnections)
 
 # Register your models here.

@@ -13,7 +13,7 @@
                     email : {{user.email}}
                 </h2>
             </p>
-            <form action="{% url 'edit-personal-info'  %}" method="post">
+            <form action="{% url 'edit-personal-info'  %}" method="post" enctype='multipart/form-data'>
                 {% csrf_token %}
                 {{form.as_p}}
                 <input type="submit" , value="bezan berim daa!">

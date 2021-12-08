@@ -8,7 +8,7 @@
 salam
     {% for post in posts %}
         <h1 style="color: brown;">
-            <a href="/user/{{comment.writer}}">user :{{post.writer}}</a>
+            <a href="/user/{{post.writer}}">user :{{post.writer}}</a>
         </h1>
         <h1>{{post.title}}</h1>
         <p>{{post.body}}</p>
@@ -16,6 +16,9 @@ salam
             <p>
                 <a class="btn btn-sm btn-primary" href="/post_urls/send_message/{{post.writer.username}}">
                     <small>Send message</small>
+                </a>
+                <a class="btn btn-sm btn-danger" href="{% url 'delete-message' message_id=post.id %}">
+                    <small>حذف</small>
                 </a>
             </p>
 
