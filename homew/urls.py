@@ -49,7 +49,8 @@ urlpatterns = [
     path('class_category_posts/<str:category_name>',class_category_posts),
     path('class_category_posts/class_post_detail/<int:post_id>',class_post_detail),
     path('post_list_2',post_list_2 , name='seri_post_list'), #
-    path('post_list_2/<int:input_id>',post_detail_2, name='seri_post_detail'), #
+    path('post_detail_2/<int:input_id>',post_detail_2, name='seri_post_detail'), #
+    path('post_detail_HW18/<int:input_id>',post_detail_update_delete, name='seri_post_detail_HW18'),
     path('post_urls/', include('post.urls')),
     path("class_category_posts/gslug/<str:given_slug>", class_post_slug_view),
     # path('maktab-view', MaktabView.as_view()),

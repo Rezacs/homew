@@ -68,14 +68,16 @@
 
     <hr>
     {% for post in posts %}
-        <h1>{{post.title}}</h1>
-        <p>{{post.shortdesc}}</p>
+        <h1>title :{{post.title}}</h1>
+        <p>short desc : {{post.shortdesc}}</p>
         <small>{{post.created_on}}</small>
-        <h3>{{post.customer}}</h3>
         <!-- <h3>{{post.tag}}</h3> -->
-        {% for t in post.tag.all  %}
-          <p>{{t}}</p>
-        {% endfor %}
+        <p>
+            <small>tags :</small>
+            {% for t in post.tag.all  %}
+            {{t}}-
+            {% endfor %}
+        </p>
         <p>
             <a href="class_post_detail/{{post.id}}">show detail</a>
             <br>

@@ -63,8 +63,8 @@ class TestPost (APITestCase):
 
     def setUp(self):
         self.user = mommy.make(User)
-        mommy.make(Post,  writer=self.user, _quantity=10)
-        mommy.make(Post_Comments,  writer=self.user, _quantity=10)
+        posts = mommy.make(Post,  writer=self.user, _quantity=10)
+        comments = mommy.make(Post_Comments,  writer=self.user, _quantity=10)
 
     def test_post_list(self):
         url = reverse('seri_post_list')

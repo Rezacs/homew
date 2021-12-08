@@ -32,6 +32,11 @@ class PostCommentListSerializer(serializers.ModelSerializer):
         model = Post_Comments
         fields = '__all__'
 
+class PostUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        exclude = ['writer' , 'slug']
+
 
 
 

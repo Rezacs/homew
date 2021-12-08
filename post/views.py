@@ -19,7 +19,7 @@ from post.forms import *
 from django.urls import reverse
 from django.contrib.auth import authenticate , login , logout
 
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes
 from rest_framework.response import Response
 from post.serializers import *
 
@@ -292,8 +292,9 @@ def CW_ajax (request) :
 
 #HW18
 
-@login_required(login_url='login-mk')
+
 @api_view(['GET', 'PUT', 'DELETE'])
+@authentication_classes([])
 def post_detail_update_delete(request, id):
 
     post = get_object_or_404(Post, id=id)
@@ -303,17 +304,17 @@ def post_detail_update_delete(request, id):
         return Response(data=serializer.data, status=200)
 
     elif request.method == 'PUT':
-        if post.creator != request.user:
+        if post.writer != request.user:
             return Response(data={'msg': 'this post owned by another user'}, status=400)
 
-        serializer = PostSerializer(post, data=request.data)
+        serializer = PostUpdateSerializer(post, data=request.data)
         serializer.is_valid(raise_exception=True)
         updated_post = serializer.save()
         resp_serializer = PostSerializer(updated_post)
         return Response(resp_serializer.data, status=200)
 
     elif request.method == 'DELETE':
-        if post.creator != request.user:
+        if post.writer != request.user:
             return Response(data={'msg': 'this post owned by another user'}, status=400)
         post.delete()
 
@@ -553,7 +554,7 @@ def edit_post ( request , post_id ) :
     form = AddPostForm(instance=specified_post)
     if request.method == "POST" :
         if request.user == specified_post.writer :
-            form = AddPostForm(request.POST , instance=specified_post)
+            form = AddPostForm(request.POST , request.FILES , instance=specified_post)
             if form.is_valid() :
                 # print(form)
                 form.save()
