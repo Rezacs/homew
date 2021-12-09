@@ -7,59 +7,39 @@
     <div class="col-md-12 ">
             <div class="row mt-1 g-3 btn-light " style="height: 100%;">
                 {% for post in posts %}
-                    <div class="col-md-3 " style="height: auto; border: 1px solid red;">
-                        {% if post.image %}
-                            <img src="{{post.image.url}}" alt="image_of_post" style="width: 100px; height: 100px; border: solid red; margin-top: 5px;">
-                        {% else %}
-                            <img src="{% static 'download.jpeg' %}" alt="image_of_post" style="width: 100px; height: 100px; border: solid red;margin-top: 5px;">
-                        {% endif %}
-                        <br>
-                        <h1>{{post.title}}</h1>
-                        <p>{{post.shortdesc}}</p>
-                        <small>{{post.created_on | date}}</small>
-                        <a href="/user/{{post.writer}}"><h2>user : {{post.writer}}</h2></a>
-                        <!-- <h3>{{post.tag}}</h3> -->
-                        <p>
-                            tags :
-                            {% for t in post.tag.all  %}
-                                {{t}}-
-                            {% endfor %}
-                        </p>
-                        <p>
-                            <a href="class_post_detail/{{post.id}}">show detail</a>
+                    <div class="col-md-3 " style="height: auto; ">
+                        <div class="card h-100" >
+                            <div style="justify-content: center;"> 
+                                {% if post.image %}
+                                    <img src="{{post.image.url}}" alt="image_of_post" style="width: 100px; height: 100px; border: solid red; margin-top: 5px;">
+                                {% else %}
+                                    <img src="{% static 'download.jpeg' %}" alt="image_of_post" style="width: 100px; height: 100px; border: solid red;margin-top: 5px;">
+                                {% endif %}
+                            </div>
                             <br>
-                            <a href="class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
-                        </p>
-                        <hr>
+                            <h1>{{post.title}}</h1>
+                            <p>{{post.shortdesc}}</p>
+                            <small>{{post.created_on | date}}</small>
+                            <a href="/user/{{post.writer}}"><h2>user : {{post.writer}}</h2></a>
+                            <!-- <h3>{{post.tag}}</h3> -->
+                            <p>
+                                tags :
+                                {% for t in post.tag.all  %}
+                                    {{t}}-
+                                {% endfor %}
+                            </p>
+                            <p>
+                                <a href="class_post_detail/{{post.id}}">show detail</a>
+                                <br>
+                                <a href="class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
+                            </p>
+                            <hr>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
     </div>
 
-    {% comment %} <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price-->
-                                $40.00 - $80.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> {% endcomment %}
+
       
 {% endblock content %}
