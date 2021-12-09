@@ -10,6 +10,7 @@ from post.views import *
 urlpatterns = [
     path('get_name/', get_name , name='get_name_mk'),
     path('add_tag/', add_tag_form , name='tag_mk'),
+    path('add_tag_2/', AddTagView.as_view() , name='tag_mk_2'),
     path('tags/', TagListView.as_view() , name='tag-list'),
     path('edit-tag/<int:tag_id>', edit_tag_form , name='edit-tag-list'),
     path('delete-tag/<int:tag_id>', delete_tag_form , name='delete-tag-mk'),

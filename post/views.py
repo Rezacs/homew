@@ -350,6 +350,17 @@ def add_tag_form ( request ) :
         'form' : form
     })
 
+class AddTagView ( View ) :
+    form = TagModelForm
+    def get (self , request , *args , **kwargs) :
+        return render(request,'forms/tag_form.html' ,{'form' : self.form})
+    def post (self , request , *args , **kwargs) :
+        post_form = self.form(request.POST)
+        messages.add_message(request, messages.SUCCESS, 'new tag saved !')
+        return redirect(reverse('tag-list'))
+
+
+
 # balaye in chera nemishe login gozasht ??
 class TagListView ( ListView ) :
     model = Tag

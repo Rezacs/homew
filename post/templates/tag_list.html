@@ -6,6 +6,9 @@
             <div class="col-md-12">
                 <a class="btn btn-sm btn-primary" href="{% url 'tag_mk' %}">sabt tag jadid</a>
             </div>
+            <div class="col-md-12" style="margin-top: 30px;">
+                <a class="btn btn-sm btn-primary" href="{% url 'tag_mk_2' %}">sabt tag jadid ba CLASS</a>
+            </div>
             {% for tag in object_list  %}
                 <p style="border: solid red; margin-top: 30px;">
                     <a href="{% url 'edit-tag-list' tag_id=tag.id %}">
