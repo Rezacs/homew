@@ -57,33 +57,25 @@
         <div class="col-md-12 my-3">
             {% if user.is_authenticated %}
                 like :
-                {% comment %} <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-primary active">
-                      <input type="checkbox" action="{% url 'class_detail' post_id=post.id %}" autocomplete="off" checked> Checkbox 1 (pre-checked)
-                    </label>
-                    <label class="btn btn-primary">
-                      <input type="checkbox" autocomplete="off"> Checkbox 2
-                    </label>
-                </div> {% endcomment %}
-                    {% if check %}
-                        <form action="{% url 'class_detail' post_id=post.id %}" method="post" id="form2">
+                    {% if check_like_post %}
+                        <form action="{% url 'class_detail' post_id=post.id %}" method="post" >
                             {% csrf_token %}
                             {{form2.as_p}}
-                            <input type="submit" , value="dislike">
+                            <input type="submit" , value="dislike" , name="form2">
                         </form>
                     {% else %}
-                        <form action="{% url 'class_detail' post_id=post.id %}" method="post" id="form2">
+                        <form action="{% url 'class_detail' post_id=post.id %}" method="post" >
                             {% csrf_token %}
                             {{form2.as_p}}
-                            <input type="submit" , value="like">
+                            <input type="submit" , value="like" , name="form2">
                         </form>
                     {% endif %}
                 <hr>
                 <br>
-                <form action="{% url 'class_detail' post_id=post.id %}" method="post" id="form">
+                <form action="{% url 'class_detail' post_id=post.id %}" method="post" >
                     {% csrf_token %}
                     {{form.as_p}}
-                    <input type="submit" , value="bezan berim daa!">
+                    <input type="submit" , value="bezan berim daa!" , name="form">
                 </form>
             {% else %}
                 <h3 style="color: red;">login and then you can like or submit your coomment !</h3>
@@ -126,9 +118,10 @@
             <a class="btn btn-sm btn-info" href="{% url 'add-comment' comment_id=comment.id  %}">
                 <small>reply to this comment</small>
             </a>   
-            {% comment %} <div class="form-group">
+            <form action="{% url 'class_detail' post_id=post.id %}" method="post" >
+                {% csrf_token %}
                 <input type="submit" ,  class="btn btn-warning", value="Like this comment" , name="comment_like">
-            </div> {% endcomment %}
+            </form>
         {% endif %}
 
         <hr>

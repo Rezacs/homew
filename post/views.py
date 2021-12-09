@@ -109,42 +109,45 @@ def class_post_detail ( request , post_id ) :
     likes = Post_Likes.objects.filter(post__id = post_id )
     if user.is_authenticated :
         customer = Customer.objects.get(user_name =user.username)
-        check = Post_Likes.objects.filter(post = post).filter(writer = user)
-    else :
-        customer = Customer.objects.get(user_name ='Anonymous')
-        check = False
+        check_like_post = Post_Likes.objects.filter(post = post).filter(writer = user)
+    # else :
+    #     customer = Customer.objects.get(user_name ='Anonymous')
+    #     check_like_post = False
     form = CommentModelForm()
     form2 = LikePostForm()
     form3 = LikeCommentForm()
     comments = Post_Comments.objects.filter(post = post.id)
     if request.method == "POST" :
-        form = CommentModelForm(request.POST) # validate
-        form2 = LikePostForm(request.POST)
-        if form.is_valid() :
-            print(form.cleaned_data)
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.customer = customer
-            comment.writer= user
-            comment.save()
-            messages.add_message(request, messages.SUCCESS, 'comment was saved !')
+        if 'form' in request.POST :
+            form = CommentModelForm(request.POST) # validate
+            if form.is_valid() :
+                print(form.cleaned_data)
+                comment = form.save(commit=False)
+                comment.post = post
+                comment.customer = customer
+                comment.writer= user
+                comment.save()
+                messages.add_message(request, messages.SUCCESS, 'comment was saved !')
+        if 'form2' in request.POST :
+            form2 = LikePostForm(request.POST)
+            if form2.is_valid() :
+                print('saaaalaaaam')
+                if check_like_post :
+                    check_like_post.delete()
+                else :
+                    like = form2.save(commit=False)
+                    like.writer = user
+                    like.post = post
+                    like.save()
+        return redirect(f'/class_post_detail/{post.id}')
 
-        if form2.is_valid() :
-            if check :
-                check.delete()
-            else :
-                like = form2.save(commit=False)
-                like.writer = user
-                like.post = post
-                like.save()
+        # if form3.is_valid() :
+        #         comment_like = form3.save(commit=False)
+        #         comment_like.writer = user
+        #         comment_like.comments = request.POST['comment.id']
+        #         comment_like.save()
 
-        if form3.is_valid() :
-                comment_like = form3.save(commit=False)
-                comment_like.writer = user
-                comment_like.comments = request.POST['comment.id']
-                comment_like.save()
-
-                
+    print('saalaaam')
     return render(request , 'class_post_detail.html', {
         'post' : post ,
         'comments' : comments ,
@@ -152,7 +155,7 @@ def class_post_detail ( request , post_id ) :
         'user' : user ,
         'likes' : likes ,
         'form2' : form2 ,
-        'check' : check ,
+        'check_like_post' : check_like_post ,
         'form3' : form3
     })
 
