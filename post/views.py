@@ -825,7 +825,7 @@ def follow(request,username):
     
     target_user = get_object_or_404(User ,username=username)    
     UserConnections.objects.create(following=request.user , follower=target_user)
-    messages.add_message(request, messages.SUCCESS, 'message was deleted !')
+    messages.add_message(request, messages.SUCCESS, 'user was followed !')
     return redirect('/post_urls/inbox')
 
 
