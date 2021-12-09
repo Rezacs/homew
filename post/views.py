@@ -144,8 +144,7 @@ def class_post_detail ( request , post_id ) :
                 comment_like.comments = request.POST['comment.id']
                 comment_like.save()
 
-            # return redirect(reverse('class-post-list', kwargs={'post_id':post.id}))
-    # contex = {'today' : today , 'maktab' : title , 'post' : post}
+                
     return render(request , 'class_post_detail.html', {
         'post' : post ,
         'comments' : comments ,

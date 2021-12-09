@@ -66,27 +66,21 @@
                     </label>
                 </div> {% endcomment %}
                     {% if check %}
-                        <form action="{% url 'class_detail' post_id=post.id %}" method="post">
+                        <form action="{% url 'class_detail' post_id=post.id %}" method="post" id="form2">
                             {% csrf_token %}
                             {{form2.as_p}}
                             <input type="submit" , value="dislike">
                         </form>
                     {% else %}
-                        <form action="{% url 'class_detail' post_id=post.id %}" method="post">
+                        <form action="{% url 'class_detail' post_id=post.id %}" method="post" id="form2">
                             {% csrf_token %}
                             {{form2.as_p}}
                             <input type="submit" , value="like">
                         </form>
                     {% endif %}
-                    {% comment %} <form action="{% url 'class_detail' post_id=post.id %}" method="post">
-                        {% csrf_token %}
-                        {{form2.as_p}}
-                        <input type="submit" , value="click to like">
-                    </form> {% endcomment %}
-                {% comment %} {% endif %} {% endcomment %}
                 <hr>
                 <br>
-                <form action="{% url 'class_detail' post_id=post.id %}" method="post">
+                <form action="{% url 'class_detail' post_id=post.id %}" method="post" id="form">
                     {% csrf_token %}
                     {{form.as_p}}
                     <input type="submit" , value="bezan berim daa!">
@@ -132,6 +126,9 @@
             <a class="btn btn-sm btn-info" href="{% url 'add-comment' comment_id=comment.id  %}">
                 <small>reply to this comment</small>
             </a>   
+            {% comment %} <div class="form-group">
+                <input type="submit" ,  class="btn btn-warning", value="Like this comment" , name="comment_like">
+            </div> {% endcomment %}
         {% endif %}
 
         <hr>
