@@ -294,8 +294,10 @@ def CW_ajax (request) :
 
 #HW18
 
-
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.permissions import IsAuthenticated
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
 @authentication_classes([])
 def post_detail_update_delete(request, id):
 
@@ -321,6 +323,8 @@ def post_detail_update_delete(request, id):
         post.delete()
 
         return Response(status=204)
+#CW19azar 
+
 
 # form
 
