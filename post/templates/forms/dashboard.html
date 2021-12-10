@@ -20,6 +20,20 @@
             {% endif %}
         </div>
         <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-3" style="border: solid orange; margin: 15px; height: 90px; background-color: cornflowerblue;">
+                    Followers :
+                    <small>{{followers.count}}</small>
+                </div>
+                <div class="col-md-3" style="border: solid orange; margin: 15px; background-color: cornflowerblue;">
+                    Followings :
+                    <small>{{followings.count}}</small>
+                </div>
+                <div class="col-md-3" style="border: solid orange; margin: 15px; background-color: cornflowerblue;">
+                    Posts :
+                    <small>{{posts.count}}</small>
+                </div>
+            </div>
             <h1>dashboard</h1>
             <h2>username : {{user.username}}</h2>
 
