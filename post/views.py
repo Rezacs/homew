@@ -323,37 +323,11 @@ def post_detail_update_delete(request, id):
         post.delete()
 
         return Response(status=204)
-        
+
 #CW19azar 
 from rest_framework import generics, mixins
 
 
-class PostList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
-    queryset = Post.published.all()
-    permission_classes = (IsAuthenticated,)
-
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
-
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
-
-    def get_serializer_class(self):
-        if self.request.method == 'GET':
-            return PostSerializer
-        elif self.request.method == 'POST':
-            return PostCreateSerializer
-
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)  # PostCreateSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        post = self.perform_create(serializer)
-        resp_serializer = PostSerializer(post)
-        headers = self.get_success_headers(serializer.data)
-        return Response(resp_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
-    def perform_create(self, serializer):
-        return serializer.save()
 
 # form
 
