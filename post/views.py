@@ -609,8 +609,26 @@ def user_page (request , username ) :
         # user = get_object_or_404(User, id=news_pk)
         posts = Post.published.filter(writer = user)
         customer = Customer.objects.get(user_name=username)
+        followers = UserConnections.objects.filter(follower=user)
+        followings = UserConnections.objects.filter(following=user)
             #messages.add_message(request, messages.SUCCESS, 'old data - no such page !')
-        return render ( request , 'poroje/page_view.html' , {'posts' :posts , 'pointed_user' : user , 'customer' : customer })
+        if request.method == "POST" :
+            if 'follow' in request.POST :
+                check = UserConnections.objects.filter(following=request.user,follower=user)
+                if check :
+                    check.delete()
+                    messages.add_message(request, messages.INFO , 'user Unfollowed !')
+                else :
+                    UserConnections.objects.create(following=request.user,follower=user)
+                    messages.add_message(request, messages.INFO , 'user followed !')
+
+        return render ( request , 'poroje/page_view.html' , {
+            'posts' :posts,
+            'pointed_user' : user ,
+            'customer' : customer,
+            'followers':followers,
+            'followings':followings
+        })
 
 
 def search_post_title ( request ) :
