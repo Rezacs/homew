@@ -1,11 +1,37 @@
 {% extends "class_base.html" %}
 
+{% comment %} {% extends "class_base.html" %}
+
 {% block content %}
     <div class="container">
         <div class="col-md-12 my-3">
             <form action="{% url 'edit-personal-info-user'  %}" method="post">
                 {% csrf_token %}
                 {{form.as_p}}
+                <input type="submit" , value="bezan berim daa!">
+            </form>
+        </div>
+    </div>
+{% endblock content %} {% endcomment %}
+
+
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-12 my-3">
+            <form action="{% url 'edit-personal-info-user'  %}" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class='fieldWrapper'>
+                    {{ form.username.errors }}
+                    <label for="{{form.username.id_for_label}}"> enter username : </label>
+                    {{ form.username }}
+                </div>
+                <div class='fieldWrapper'>
+                    {{ form.email.errors }}
+                    <label for="{{form.email.id_for_label}}"> enter email : </label>
+                    {{ form.email }}
+                </div>
                 <input type="submit" , value="bezan berim daa!">
             </form>
         </div>

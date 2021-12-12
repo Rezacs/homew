@@ -365,9 +365,10 @@ class AddTagView ( View ) :
         return render(request,'forms/tag_form.html' ,{'form' : self.form})
     def post (self , request , *args , **kwargs) :
         post_form = self.form(request.POST)
+        if post_form.is_valid() :
+            post_form.save()
         messages.add_message(request, messages.SUCCESS, 'new tag saved !')
         return redirect(reverse('tag-list'))
-
 
 
 # balaye in chera nemishe login gozasht ??
@@ -806,16 +807,22 @@ def login_email (request) :
 @login_required(login_url='login-mk')
 def edit_personal_info_user ( request ) :
     specified_user = get_object_or_404(User , username =request.user.username )
+    specified_customer = Customer.objects.get(user_name=request.user.username)
+    print('injjjjjja' , specified_customer)
     form = UserEditFormModel(instance=specified_user)
     print('username' , request.user.username)
     if request.method == "POST" :
         form = UserEditFormModel(request.POST , instance=specified_user)
         if form.is_valid() :
             form.save()
+            specified_customer.user_name = form.cleaned_data.get('username')
+            specified_customer.save()
+            print('ussssssss*******' , specified_customer)
             messages.add_message(request, messages.SUCCESS , 'profile was edited !')
             return redirect(reverse('dashboard'))
     return render ( request , 'poroje/edit_personal_info_user.html',{'form' : form , 'user':specified_user })
 
+#Email forgotten password
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
