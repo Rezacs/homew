@@ -419,10 +419,13 @@ def login_maktab ( request ) :
             user = authenticate(username=form.cleaned_data.get('username'),password=form.cleaned_data.get('password'))
             if user is not None :
                 login(request,user)
-                q = request.GET.get('next')
-                if q :
-                    return redirect(reverse(f'{q}'))
                 messages.add_message(request, messages.SUCCESS , 'loged in !')
+                # q = request.GET.get('next')
+                # if q :
+                #     return redirect(reverse(f'{q}'))
+                next = request.GET.get('next')
+                if next :
+                    return redirect (request.GET.get('next'))
                 return redirect(reverse('dashboard'))
 
     return render (request , 'forms/login.html' , {'form' : form})
