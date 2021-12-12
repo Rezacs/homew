@@ -35,7 +35,7 @@ class PostCommentListSerializer(serializers.ModelSerializer):
 class PostUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        exclude = ['writer' , 'slug']
+        exclude = ['writer' , 'slug' , 'customer']
 
 
 

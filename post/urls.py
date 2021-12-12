@@ -40,4 +40,6 @@ urlpatterns = [
     path('inbox' , inbox ,name='inbox' ),
     #CW20
     path('HW20' , CW_ajax ,name='HW20' ),
+    #HW19
+    path('post/<int:id>/', PostDetailUpdateDeleteView.as_view(), name='post_detail')
 ]+ static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)

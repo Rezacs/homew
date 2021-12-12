@@ -324,8 +324,25 @@ def post_detail_update_delete(request, id):
 
         return Response(status=204)
 
-#CW19azar 
+#HW19
+
 from rest_framework import generics, mixins
+class PostDetailUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field = 'id'
+    lookup_url_kwarg = 'id'
+
+    def get_queryset(self):
+        if self.request.method == 'GET':
+            return Post.objects.all()
+        else:
+            return  Post.objects.all() 
+            #return  Post.objects.filter(writer=self.request.user)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return PostSerializer
+        else:
+            return PostUpdateSerializer
 
 
 
