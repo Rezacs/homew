@@ -19,7 +19,7 @@
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-3" style="border: solid orange; margin: 15px; height: 90px; background-color: cornflowerblue;">
-                    Followers :
+                    <a href="/followersandfollowings/{{pointed_user.username}}">Followers :</a>
                     <small>{{followers.count}}</small>
                 </div>
                 <div class="col-md-3" style="border: solid orange; margin: 15px; background-color: cornflowerblue;">
@@ -48,10 +48,27 @@
                         <a class="btn btn-sm btn-primary" href="/post_urls/send_message/{{pointed_user.username}}">
                             <small>Send message</small>
                         </a>
-                        <form action="" method="post" >
+
+
+                        {% comment %} <form action="" method="post" >
                             {% csrf_token %}
                             <input type="submit" ,  class="btn btn-warning", value="Follow user !" , name="follow">
-                        </form>
+                        </form> {% endcomment %}
+
+
+                        {% if check %}
+                            <form action="" method="post" >
+                                {% csrf_token %}
+                                <input type="submit" ,  class="btn btn-danger", value="UNFollow user !" , name="follow">
+                            </form>
+                        {% else %}
+                            <form action="" method="post" >
+                                {% csrf_token %}
+                                <input type="submit" ,  class="btn btn-warning", value="Follow user !" , name="follow">
+                            </form>
+                        {% endif %}
+
+
                     </p>
                 {% endif %}
             {% endif %}

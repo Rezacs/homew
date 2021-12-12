@@ -9,6 +9,12 @@ class Customer ( models.Model ) :
         ('fem' , 'female'),
         ('not' , 'notset'),
     ]
+    THEME_CHOICES = [ 
+        ('gre' , 'green'),
+        ('pur' , 'purpule'),
+        ('red' , 'red'),
+        ('blu' , 'blue'),
+    ]
     first_name = models.CharField(max_length=300 ,blank=True , null=True)
     last_name = models.CharField(max_length=300,blank=True , null=True)
     user_name = models.CharField(max_length=100 , unique=True )
@@ -22,6 +28,12 @@ class Customer ( models.Model ) :
     gender = models.CharField(
         max_length=3,
         choices=GENDER_CHOICES,
+        blank=True,
+        null=True
+    )
+    theme = models.CharField(
+        max_length=3,
+        choices=THEME_CHOICES,
         blank=True,
         null=True
     )

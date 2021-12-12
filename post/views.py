@@ -625,6 +625,9 @@ def user_page (request , username ) :
             # return redirect(request.GET.get('next'))
     else :
         user = User.objects.get(username=username)
+        origin_user = request.user
+        if origin_user.is_authenticated :
+            check = UserConnections.objects.filter(following=request.user,follower=user)
         # user = get_object_or_404(User, id=news_pk)
         posts = Post.published.filter(writer = user)
         customer = Customer.objects.get(user_name=username)
@@ -640,13 +643,16 @@ def user_page (request , username ) :
                 else :
                     UserConnections.objects.create(following=request.user,follower=user)
                     messages.add_message(request, messages.INFO , 'user followed !')
+                    
+            return redirect(f'/user/{username}')
 
         return render ( request , 'poroje/page_view.html' , {
             'posts' :posts,
             'pointed_user' : user ,
             'customer' : customer,
             'followers':followers,
-            'followings':followings
+            'followings':followings,
+            'check' : check
         })
 
 
@@ -883,6 +889,49 @@ def follow(request,username):
     UserConnections.objects.create(following=request.user , follower=target_user)
     messages.add_message(request, messages.SUCCESS, 'user was followed !')
     return redirect('/post_urls/inbox')
+
+
+@login_required(login_url='login-mk')
+def unfollow(request,username):
+    
+    target_user = get_object_or_404(User ,username=username)    
+    q = UserConnections.objects.filter(following=request.user , follower=target_user)
+    q.delete()
+    messages.add_message(request, messages.SUCCESS, 'user was unfollowed !')
+    return redirect(f'/followersandfollowings/{request.user.username}')
+
+
+@login_required(login_url='login-mk')
+def removefollower(request,username):
+    
+    target_user = get_object_or_404(User ,username=username)    
+    q = UserConnections.objects.filter(following=target_user , follower=request.user)
+    q.delete()
+    messages.add_message(request, messages.SUCCESS, 'follower was removed !')
+    return redirect(f'/followersandfollowings/{request.user.username}')
+
+
+def followersandfollowings (request , username) :
+
+    pointed_user = User.objects.get(username=username)
+    followers = UserConnections.objects.filter(following=pointed_user)
+    followings = UserConnections.objects.filter(follower=pointed_user)
+
+    if request.method == "POST" :
+        next = request.GET.get('next')
+        #if next :
+            # return redirect (request.GET.get('next'))
+        if 'follow' in request.POST :
+            check = UserConnections.objects.filter(following=request.user,follower=next)
+            check.delete()
+            messages.add_message(request, messages.INFO , 'user Unfollowed !')
+                
+                
+    return render ( request , 'poroje/relations.html' , {
+        'followers':followers,
+        'followings':followings,
+        'pointed_user' : pointed_user
+    })
 
 
 

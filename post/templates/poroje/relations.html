@@ -1,0 +1,55 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="col-md-12">
+        <h1>Relations of {{user.username}}</h1>
+            <div class="row mt-1 g-3 btn-light " style="height: 100%;">
+                <h1>Followings :</h1>
+                {% for follower in followers %}
+                    <div class="col-md-3 " style="height: auto; ">
+                        <div class="card h-100" >
+                            <small>{{follower.created_on | date}}</small>
+                            <a href="/user/{{follower.follower}}"><h2>user : {{follower.follower}}</h2></a>
+                            {% if request.user == pointed_user %}
+                            
+                                <form  action="{% url 'unfollow' username=follower.follower  %}" method="post" >
+                                    {% comment %} username=pointed_user.username  ?next={{follower.follower}} {% endcomment %}
+                                    {% csrf_token %}
+                                    <input type="submit" ,  class="btn btn-danger", value="UNFollow user !" , name="follow">
+                                </form>
+
+                            {% endif %}
+                            {% comment %} <p>
+                                <a href="class_post_detail/{{post.id}}">show detail</a>
+                                <br>
+                                <a href="class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
+                            </p> {% endcomment %}
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <h1>Followers :</h1>
+                {% for following in followings %}
+                    <div class="col-md-3 " style="height: auto; ">
+                        <div class="card h-100" >
+                            <small>{{following.created_on | date}}</small>
+                            <a href="/user/{{following.following}}"><h2>user : {{following.following}}</h2></a>
+                            {% if request.user == pointed_user %}
+                            
+                                <form  action="{% url 'removefollower' username=following.following  %}" method="post" >
+                                    {% comment %} username=pointed_user.username  ?next={{follower.follower}} {% endcomment %}
+                                    {% csrf_token %}
+                                    <input type="submit" ,  class="btn btn-danger", value="Remove Follower !" , name="follow">
+                                </form>
+
+                            {% endif %}
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>      
+{% endblock content %}

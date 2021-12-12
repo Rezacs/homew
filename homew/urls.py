@@ -80,4 +80,7 @@ urlpatterns = [
          name='password_reset_complete'),
     #following and follower
     path('follow/<str:username>',follow,name="follow"),
+    path('followersandfollowings/<str:username>',followersandfollowings , name="followers-and-followings"),
+    path('unfollow/<str:username>',unfollow,name="unfollow"),
+    path('removefollower/<str:username>',removefollower,name="removefollower"),
 ]+ static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
