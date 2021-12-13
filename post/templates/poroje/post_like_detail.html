@@ -1,0 +1,22 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="col-md-12">
+        <h1>Relations of {{user.username}}</h1>
+            <div class="row mt-1 g-3 btn-light " style="height: 100%;">
+                <h1>Likes of {{post.slug}}</h1>
+                <h2>count : {{likes.count}}</h2>
+                {% for like in likes %}
+                    <div class="col-md-3 " style="height: auto; ">
+                        <div class="card h-100" >
+                            <small>{{like.created_on | date}}</small>
+                            <a href="/user/{{like.writer}}"><h2>user : {{like.writer}}</h2></a>
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>      
+{% endblock content %}

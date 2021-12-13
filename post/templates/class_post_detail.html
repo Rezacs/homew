@@ -19,7 +19,10 @@
                 <small>{{post.created_on}}</small>
                 <br>
                 {% if likes %}
-                liked by <span style="border: solid blue;">{{likes.count}} </span>  user :
+                <a href="/post_urls/post_liked_details/{{post.id}}">
+                    liked by <span style="border: solid blue;">{{likes.count}} </span>  user :
+                </a>
+                
                     {% for like in likes %}
                     {{like.writer}}-
                     {% endfor %}

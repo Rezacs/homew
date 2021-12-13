@@ -110,9 +110,9 @@ def class_post_detail ( request , post_id ) :
     if user.is_authenticated :
         customer = Customer.objects.get(user_name =user.username)
         check_like_post = Post_Likes.objects.filter(post = post).filter(writer = user)
-    # else :
-    #     customer = Customer.objects.get(user_name ='Anonymous')
-    #     check_like_post = False
+    else :
+        customer = Customer.objects.get(user_name ='Anonymous')
+        check_like_post = False
     form = CommentModelForm()
     form2 = LikePostForm()
     form3 = LikeCommentForm()
@@ -738,6 +738,8 @@ def user_page (request , username ) :
         origin_user = request.user
         if origin_user.is_authenticated :
             check = UserConnections.objects.filter(following=request.user,follower=user)
+        else :
+            check = False
         # user = get_object_or_404(User, id=news_pk)
         posts = Post.published.filter(writer = user)
         customer = Customer.objects.get(user_name=username)
@@ -1041,6 +1043,16 @@ def followersandfollowings (request , username) :
         'followers':followers,
         'followings':followings,
         'pointed_user' : pointed_user
+    })
+
+def liked_details (request , post_id) :
+
+    postz = Post.published.get(id=post_id)
+    likes = Post_Likes.objects.filter(post=postz)
+                            
+    return render ( request , 'poroje/post_like_detail.html' , {
+        'likes':likes,
+        'post' : postz
     })
 
 

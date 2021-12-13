@@ -38,6 +38,7 @@ urlpatterns = [
     path('edit_username' , edit_personal_info_user ,name='edit-personal-info-user' ),
     path('send_message/<str:username>' , send_message ,name='send-message' ),
     path('inbox' , inbox ,name='inbox' ),
+    path('post_liked_details/<int:post_id>' , liked_details ,name='post_liked_details' ),
     #CW20
     path('HW20' , CW_ajax ,name='HW20' ),
     #HW19
