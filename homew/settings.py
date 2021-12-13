@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'rest_framework',
+    'django_filters',
+    'rest_framework_simplejwt',
 
     'basket',
     'commentandlike',
@@ -45,10 +49,7 @@ INSTALLED_APPS = [
     'grups',
     'products',
     'post',
-    'django_extensions',
     'articles',
-    'rest_framework',
-    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [

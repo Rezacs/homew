@@ -268,6 +268,63 @@ def post_comments_list_3(request , post_id):
 
     return Response(data = serializer.data , status=200)
 
+#HW19 - completed filter :
+
+from post.filter import *
+from rest_framework import generics, mixins
+
+#@permission_classes([IsAuthenticated])
+# class PostListFilter(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+#     queryset = Post.published.all()
+#     # permission_classes = (IsAuthenticated,)
+#     filterset_class = PostListFilterss
+
+#     def get(self, request, *args, **kwargs):
+#         return self.list(request, *args, **kwargs)
+
+#     def get_serializer_class(self):
+#         if self.request.method == 'GET':
+#             return PostListSerializer
+
+#@permission_classes([IsAuthenticated])
+class PostListFilter(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    queryset = Post.objects.all()
+    filterset_class = PostListFilterss
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return PostSerializer
+        elif self.request.method == 'POST':
+            return PostSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)  # PostCreateSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        post = self.perform_create(serializer)
+        resp_serializer = PostSerializer(post)
+        headers = self.get_success_headers(serializer.data)
+        return Response(resp_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        return serializer.save()
+
+    def get_serializer_context(self):
+        """
+        Extra context provided to the serializer class.
+        """
+        return {
+            'request': self.request,
+            'format': self.format_kwarg,
+            'view': self,
+            'user': self.request.user
+        }
+
 #CW 16 azar 
 
 
@@ -327,6 +384,9 @@ def post_detail_update_delete(request, id):
 #HW19
 
 from rest_framework import generics, mixins
+from rest_framework import status
+
+@permission_classes([IsAuthenticated])
 class PostDetailUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'id'
     lookup_url_kwarg = 'id'
@@ -335,14 +395,47 @@ class PostDetailUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
         if self.request.method == 'GET':
             return Post.objects.all()
         else:
-            return  Post.objects.all() 
-            #return  Post.objects.filter(writer=self.request.user)
+            #return  Post.objects.all() 
+            return  Post.objects.filter(writer=self.request.user)
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
             return PostSerializer
         else:
             return PostUpdateSerializer
+
+
+#@permission_classes([IsAuthenticated])
+class PostListCreate(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    queryset = Post.published.all()
+    # permission_classes = (IsAuthenticated,)
+    #filterset_class = PostListFilter
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return PostSerializer
+        elif self.request.method == 'POST':
+            return PostUpdateSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)  # PostCreateSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.writer = self.request.user
+        #print('ssssssssss******************' , self.request.user.username)
+        serializer.customer = Customer.objects.get(user_name=self.request.user.username)
+        post = self.perform_create(serializer)
+        resp_serializer = PostSerializer(post)
+        headers = self.get_success_headers(serializer.data)
+        return Response(resp_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        return serializer.save()
 
 
 

@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from post.views import *
 
-# app_name = 'post'
+# app_name = 'post' 
 
 urlpatterns = [
     path('get_name/', get_name , name='get_name_mk'),
@@ -41,5 +41,6 @@ urlpatterns = [
     #CW20
     path('HW20' , CW_ajax ,name='HW20' ),
     #HW19
-    path('post/<int:id>/', PostDetailUpdateDeleteView.as_view(), name='post_detail')
+    path('post/<int:id>/', PostDetailUpdateDeleteView.as_view(), name='post_detail'),
+    path('post_create', PostListCreate.as_view(), name='post_create'),
 ]+ static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
