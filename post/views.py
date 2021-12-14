@@ -301,11 +301,13 @@ class PostListFilter(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Ge
         if self.request.method == 'GET':
             return PostSerializer
         elif self.request.method == 'POST':
-            return PostSerializer
+            return PostUpdateSerializer
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)  # PostCreateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        serializer.writer = self.request.user
+        serializer.customer = Customer.objects.get(user_name=self.request.user.username)
         post = self.perform_create(serializer)
         resp_serializer = PostSerializer(post)
         headers = self.get_success_headers(serializer.data)
