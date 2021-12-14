@@ -48,7 +48,9 @@ urlpatterns = [
     path('posts/<str:given_slug>/', class_post_slug_view, name='show_post'),
     path('class_category_posts/<str:category_name>',class_category_posts),
     path('class_category_posts/class_post_detail/<int:post_id>',class_post_detail),
-    path('post_list_2',PostListFilter.as_view() , name='seri_post_list'), # HW19
+    # HW19
+    path('post_list_2',PostListFilter.as_view() , name='seri_post_list'), 
+    path('comment_create_get',DRF_Create_comment.as_view()),
     path('post_detail_2/<int:input_id>',post_detail_2, name='seri_post_detail'), #
     path('post_detail_HW18/<int:input_id>',post_detail_update_delete, name='seri_post_detail_HW18'),
     path('post_urls/', include('post.urls')),

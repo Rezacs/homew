@@ -274,19 +274,6 @@ from post.filter import *
 from rest_framework import generics, mixins
 
 #@permission_classes([IsAuthenticated])
-# class PostListFilter(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
-#     queryset = Post.published.all()
-#     # permission_classes = (IsAuthenticated,)
-#     filterset_class = PostListFilterss
-
-#     def get(self, request, *args, **kwargs):
-#         return self.list(request, *args, **kwargs)
-
-#     def get_serializer_class(self):
-#         if self.request.method == 'GET':
-#             return PostListSerializer
-
-#@permission_classes([IsAuthenticated])
 class PostListFilter(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
     queryset = Post.objects.all()
     filterset_class = PostListFilterss
@@ -306,15 +293,16 @@ class PostListFilter(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Ge
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)  # PostCreateSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.writer = self.request.user
-        serializer.customer = Customer.objects.get(user_name=self.request.user.username)
         post = self.perform_create(serializer)
-        resp_serializer = PostSerializer(post)
+        resp_serializer = PostUpdateSerializer(post)
         headers = self.get_success_headers(serializer.data)
         return Response(resp_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def perform_create(self, serializer):
-        return serializer.save()
+        #serializer.save(commit=False)
+        #serializer.writer = self.request.user
+        #serializer.customer = Customer.objects.get(user_name=self.request.user.username)
+        return serializer.save(writer=self.request.user , customer=Customer.objects.get(user_name=self.request.user.username))
 
     def get_serializer_context(self):
         """
@@ -406,6 +394,97 @@ class PostDetailUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
         else:
             return PostUpdateSerializer
 
+@permission_classes([IsAuthenticated])
+class CommentDetailUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field = 'id'
+    lookup_url_kwarg = 'id'
+
+    def get_queryset(self):
+        if self.request.method == 'GET':
+            return Post_Comments.objects.all()
+        else:
+            #return  Post.objects.all() 
+            return  Post_Comments.objects.filter(writer=self.request.user)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return PostCommentListSerializer
+        else:
+            return PostCommentUpdateSerializer
+
+@permission_classes([IsAuthenticated])
+class CategoryDetailUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    lookup_field = 'id'
+    lookup_url_kwarg = 'id'
+
+    def get_queryset(self):
+        if self.request.method == 'GET':
+            return Category.objects.all()
+        else:
+            #return  Post.objects.all() 
+            return  Category.objects.filter(writer=self.request.user)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return CategoryListSerializer
+        else:
+            return CategoryListSerializer
+
+#@permission_classes([IsAuthenticated])
+class DRF_Create_comment(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    queryset = Post_Comments.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return PostCommentListSerializer
+        elif self.request.method == 'POST':
+            return PostCommentCreateSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        post = self.perform_create(serializer)
+        resp_serializer = PostCommentCreateSerializer(post)
+        headers = self.get_success_headers(serializer.data)
+        return Response(resp_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        return serializer.save(writer=self.request.user , customer=Customer.objects.get(user_name=self.request.user.username))
+
+#@permission_classes([IsAuthenticated])
+class DRF_Create_Category(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    queryset = Category.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return CategoryListSerializer
+        elif self.request.method == 'POST':
+            return CategoryListSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        post = self.perform_create(serializer)
+        resp_serializer = CategoryListSerializer(post)
+        headers = self.get_success_headers(serializer.data)
+        return Response(resp_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        return serializer.save()
+
+#
 
 #@permission_classes([IsAuthenticated])
 class PostListCreate(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
@@ -944,6 +1023,7 @@ def edit_personal_info_user ( request ) :
         if form.is_valid() :
             form.save()
             specified_customer.user_name = form.cleaned_data.get('username')
+            specified_customer.email = form.cleaned_data.get('email')
             specified_customer.save()
             print('ussssssss*******' , specified_customer)
             messages.add_message(request, messages.SUCCESS , 'profile was edited !')

@@ -4,6 +4,7 @@
 
 from rest_framework import fields, serializers
 from commentandlike.models import Post_Comments
+from grups.models import Category
 
 from post.models import Post
 from customer.models import *
@@ -30,6 +31,21 @@ class PostSerializer(serializers.ModelSerializer):
 class PostCommentListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post_Comments
+        fields = '__all__'
+
+class PostCommentUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post_Comments
+        exclude = ['writer' , 'post' , 'customer']
+
+class PostCommentCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post_Comments
+        exclude = ['writer' , 'customer']
+
+class CategoryListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
         fields = '__all__'
 
 class PostUpdateSerializer(serializers.ModelSerializer):

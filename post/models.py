@@ -85,7 +85,7 @@ class Post(CommonInfo):
         ('NOT','notset'),
     ]
     image = models.ImageField(upload_to='uploads',null=True,blank=True)
-    category = models.ManyToManyField(Category)
+    category = models.ManyToManyField(Category  ) # ,on_delete=models.SET_NULL
     slug = models.SlugField(max_length = 250, null = True, blank = True , unique=True) 
 
     location_lat = models.DecimalField(max_digits=50, decimal_places=2,null=True,blank=True)
