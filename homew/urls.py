@@ -52,7 +52,7 @@ urlpatterns = [
     path('post_detail_2/<int:input_id>',post_detail_2, name='seri_post_detail'), #
     path('post_detail_HW18/<int:input_id>',post_detail_update_delete, name='seri_post_detail_HW18'),
     path('post_urls/', include('post.urls')),
-    path("class_category_posts/gslug/<str:given_slug>", class_post_slug_view),
+    path("class_category_posts/gslug/<str:given_slug>", class_post_slug_view , name='post-slug-view'),
     # path('maktab-view', MaktabView.as_view()),
     # path('maktab-list',ListPostView.as_view())
     path('accounts/', include('django.contrib.auth.urls')),

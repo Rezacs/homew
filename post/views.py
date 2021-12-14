@@ -196,7 +196,7 @@ def class_category_list ( request ) :
     return render ( request , 'category_list.html' , {'categorys' :categorys }) #category_list
 
 def class_category_posts ( request , category_name ) :
-    posts = Post.objects.filter(category__name__contains=f'{category_name}')
+    posts = Post.published.filter(category__name__contains=f'{category_name}')
     return render(request , 'class_category_posts.html', {'posts' : posts})
 
 class PostDetailView(DetailView):
@@ -484,6 +484,7 @@ class AddTagView ( View ) :
 # balaye in chera nemishe login gozasht ??
 class TagListView ( ListView ) :
     model = Tag
+    paginate_by = 5
     #context_object_name = 'publisher'
     #queryset = Tag.objects.all()
     template_name = "tag_list.html"
@@ -545,7 +546,11 @@ def register_maktab(request) :
     if request.method == "POST" :
         if form.is_valid() :
             user = User.objects.create_user(form.cleaned_data['username'],form.cleaned_data['email'],form.cleaned_data['password'])
-            customer = Customer.objects.create(user_name=form.cleaned_data.get('username'))
+            check = Customer.objects.filter(email = form.cleaned_data['email'] )
+            if check :
+                messages.add_message(request, messages.INFO , 'this email have an account !')
+                return render (request , 'forms/register.html' , {'form' : form })
+            customer = Customer.objects.create(user_name=form.cleaned_data.get('username') , email=form.cleaned_data.get('email'))
             user = authenticate(username=form.cleaned_data.get('username'),password=form.cleaned_data.get('password'))
             if user is not None :
                 login(request,user)
