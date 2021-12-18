@@ -46,7 +46,7 @@ def class_first_template ( request ) :
     return render(request , 'maktab.html', contex)
 
 def class_post_slug_view ( request , given_slug ) :
-    post = Post.published.get(slug = given_slug)
+    post = Post.objects.get(slug = given_slug)
     if post.writer != request.user and post.status == 'DRF' :
         return HttpResponse('you dont have permission to do this !')
     user = request.user
