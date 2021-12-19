@@ -1,0 +1,1853 @@
+{% load static %}
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" content="HTML5,CSS3,HTML,Template,multi-page,Zust - Social Community & Marketplace HTML Template" >
+        <meta name="description" content="Zust - Social Community & Marketplace HTML Template">
+        <meta name="author" content="Barat Hadian">
+
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.rtl.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/remixicon.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css' %}">
+
+
+<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/simplebar.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/metismenu.min.css' %}">
+
+
+<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/rtl.css' %}">
+
+<title>Zust - قالب HTML زوست , پوسته سایت انجمن اجتماعی و مارکت پلیس</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+    <div class="container mt-3" style="text-align: center; min-height: 400px;">
+        {% if messages %}
+                {% for message in messages %}
+                    <div id="messg" class="alert alert-{{message.tags}}" role="alert">
+                        {{message}}
+                        <a href="#" class="del-msg">&times;</a>
+                    </div>
+                {% endfor %}
+        {% endif %}
+        
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
+
+<div class="preloader-area">
+<div class="spinner">
+<div class="inner">
+<div class="disc"></div>
+<div class="disc"></div>
+<div class="disc"></div>
+</div>
+</div>
+</div>
+
+
+<div class="main-content-wrapper d-flex flex-column">
+
+<div class="navbar-area">
+<div class="main-responsive-nav">
+<div class="main-responsive-menu">
+<div class="responsive-burger-menu d-lg-none d-block">
+<span class="top-bar"></span>
+<span class="middle-bar"></span>
+<span class="bottom-bar"></span>
+</div>
+</div>
+</div>
+<div class="main-navbar">
+<nav class="navbar navbar-expand-lg navbar-light">
+<a href="index.html" class="navbar-brand d-flex align-items-center">
+<img src="assets/images/logo.png" alt="image">
+</a>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="navbar-burger-menu m-auto">
+<span class="top-bar"></span>
+<span class="middle-bar"></span>
+<span class="bottom-bar"></span>
+</div>
+<div class="search-box m-auto">
+<form>
+<input type="text" class="input-search" placeholder="جستجو...">
+<button type="submit"><i class="ri-search-line"></i></button>
+</form>
+</div>
+<div class="others-options d-flex align-items-center">
+<div class="option-item">
+<a href="index.html" class="home-btn"><i class="flaticon-home"></i></a>
+</div>
+<div class="option-item">
+<div class="dropdown friend-requests-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <div class="friend-requests-btn">
+<i class="flaticon-user"></i>
+<span>3</span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="friend-requests-header d-flex justify-content-between align-items-center">
+<h3>درخواست های دوستی</h3>
+<i class="flaticon-menu"></i>
+</div>
+<div class="friend-requests-body" data-simplebar>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-2.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-3.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+ <div class="figure">
+<a href="#"><img src="assets/images/user/user-4.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-5.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-6.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-7.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-8.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-9.jpg" class="rounded-circle" alt="image"></a>
+ </div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="view-all-requests-btn">
+<a href="friends.html" class="default-btn">مشاهده همه درخواست ها</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown messages-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="messages-btn">
+<i class="flaticon-email"></i>
+<span>2</span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="messages-header d-flex justify-content-between align-items-center">
+<h3>پیام ها</h3>
+<i class="flaticon-menu"></i>
+</div>
+<div class="messages-search-box">
+<form>
+<input type="text" class="input-search" placeholder="جستجوی پیام...">
+<button type="submit"><i class="ri-search-line"></i></button>
+</form>
+</div>
+<div class="messages-body" data-simplebar>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-11.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">جیمز وانوین</a></h4>
+<span>سلام عزیز من میخواهم با تو صحبت کنم</span>
+</div>
+</div>
+ <div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-12.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">هری لوپز</a></h4>
+<span>سلام. من به دنبال طراح رابط کاربری هستم</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-13.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">متیو اسمیت</a></h4>
+<span>با تشکر برای اتصال!</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-14.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">روز اسمیت</a></h4>
+<span>با تشکر برای اتصال!</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-1.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">جیمز وانوین</a></h4>
+<span>سلام عزیز من میخواهم با تو صحبت کنم</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-2.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">هری لوپز</a></h4>
+<span>سلام. من به دنبال طراح رابط کاربری هستم</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+ <a href="#"><img src="assets/images/user/user-3.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">متیو اسمیت</a></h4>
+<span>با تشکر برای اتصال!</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-4.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">روز اسمیت</a></h4>
+<span>با تشکر برای اتصال!</span>
+</div>
+</div>
+<div class="view-all-messages-btn">
+<a href="messages.html" class="default-btn">مشاهده همه پیام ها</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown notifications-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="notifications-btn">
+<i class="flaticon-bell"></i>
+<span>1</span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="notifications-header d-flex justify-content-between align-items-center">
+<h3>هشدارها</h3>
+<i class="flaticon-menu"></i>
+</div>
+<div class="notifications-body" data-simplebar>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-11.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">جیمز وانوین</a></h4>
+<span>نظری در مورد وضعیت شما ارسال کرد</span>
+<span class="main-color">20 دقیقه پیش</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-12.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">هری لوپز</a></h4>
+<span>برای شما درخواست دوستی ارسال کرد</span>
+<span class="main-color">2 روز پیش</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-13.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">متیو اسمیت</a></h4>
+<span>افزودن عکس در گروه طراحی</span>
+<span class="main-color">3 روز پیش</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-5.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">جیمز وانوین</a></h4>
+<span>نظری در مورد وضعیت شما ارسال کرد</span>
+<span class="main-color">20 دقیقه پیش</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-6.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">هری لوپز</a></h4>
+<span>برای شما درخواست دوستی ارسال کرد</span>
+<span class="main-color">2 روز پیش</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-7.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">متیو اسمیت</a></h4>
+<span>افزودن عکس در گروه طراحی</span>
+<span class="main-color">3 روز پیش</span>
+</div>
+ </div>
+<div class="view-all-notifications-btn">
+<a href="notifications.html" class="default-btn">مشاهده همه هشدارها</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown language-option">
+<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="flaticon-global"></i>
+<span class="lang-name"></span>
+</button>
+<div class="dropdown-menu language-dropdown-menu">
+<a class="dropdown-item" href="#">
+<img src="assets/images/iran.png" alt="flag">
+فارسی
+</a>
+<a class="dropdown-item" href="#">
+<img src="assets/images/china.png" alt="flag">
+简体中文
+</a>
+<a class="dropdown-item" href="#">
+<img src="assets/images/uae.png" alt="flag">
+العربيّة
+</a>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown profile-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="menu-profile">
+<img src="assets/images/user/user-1.jpg" class="rounded-circle" alt="image">
+<span class="name">متیو</span>
+<span class="status-online"></span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="profile-header">
+<h3>متیو تورنر</h3>
+<a href="mailto: hello@zust.com"> hello@zust.com</a>
+</div>
+<ul class="profile-body">
+<li><i class="flaticon-user"></i> <a href="my-profile.html">پروفایل من</a></li>
+<li><i class="flaticon-settings"></i> <a href="setting.html">تنظیمات</a></li>
+<li><i class="flaticon-privacy"></i> <a href="privacy.html">حریم خصوصی</a></li>
+<li><i class="flaticon-information"></i> <a href="help-and-support.html">راهنما و پشتیبانی</a></li>
+<li><i class="flaticon-logout"></i> <a href="index.html">خروج</a></li>
+</ul>
+</div>
+</div>
+ </div>
+</div>
+</div>
+</nav>
+</div>
+<div class="others-option-for-responsive">
+<div class="container">
+<div class="dot-menu">
+<div class="inner">
+<div class="circle circle-one"></div>
+<div class="circle circle-two"></div>
+<div class="circle circle-three"></div>
+</div>
+</div>
+<div class="container">
+<div class="option-inner">
+<div class="others-options d-flex align-items-center">
+<div class="option-item">
+<a href="index.html" class="home-btn"><i class="flaticon-home"></i></a>
+</div>
+<div class="option-item">
+<div class="dropdown friend-requests-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="friend-requests-btn">
+<i class="flaticon-user"></i>
+<span>3</span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="friend-requests-header d-flex justify-content-between align-items-center">
+<h3>درخواست های دوستی</h3>
+<i class="flaticon-menu"></i>
+</div>
+<div class="friend-requests-body">
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-2.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندرا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-3.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندرا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-4.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندرا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="item d-flex align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-5.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="content d-flex justify-content-between align-items-center">
+<div class="text">
+<h4><a href="#">ساندرا کروس</a></h4>
+<span>26 دوستی</span>
+</div>
+<div class="btn-box d-flex align-items-center">
+<button class="delete-btn d-inline-block me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="حذف کردن" type="button"><i class="ri-close-line"></i></button>
+<button class="confirm-btn d-inline-block" data-bs-toggle="tooltip" data-bs-placement="top" title="تائید" type="button"><i class="ri-check-line"></i></button>
+</div>
+</div>
+</div>
+<div class="view-all-requests-btn">
+<a href="friends.html" class="default-btn">مشاهده همه درخواست ها</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown messages-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="messages-btn">
+<i class="flaticon-email"></i>
+<span>2</span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="messages-header d-flex justify-content-between align-items-center">
+<h3>پیام ها</h3>
+<i class="flaticon-menu"></i>
+</div>
+<div class="messages-search-box">
+<form>
+<input type="text" class="input-search" placeholder="جستجوی پیام...">
+<button type="submit"><i class="ri-search-line"></i></button>
+</form>
+</div>
+<div class="messages-body">
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-11.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">جیمز وانوین</a></h4>
+<span>سلام عزیز من میخواهم با تو صحبت کنم</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-12.jpg" class="rounded-circle" alt="image"></a>
+</div>
+ <div class="text">
+<h4><a href="#">هری لوپز</a></h4>
+<span>سلام. من به دنبال طراح رابط کاربری هستم</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-13.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">متیو اسمیت</a></h4>
+<span>با تشکر برای اتصال!</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-14.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">روز اسمیت</a></h4>
+<span>با تشکر برای اتصال!</span>
+</div>
+</div>
+<div class="view-all-messages-btn">
+<a href="messages.html" class="default-btn">مشاهده همه پیام ها</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown notifications-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="notifications-btn">
+<i class="flaticon-bell"></i>
+<span>1</span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="notifications-header d-flex justify-content-between align-items-center">
+<h3>هشدارها</h3>
+<i class="flaticon-menu"></i>
+</div>
+<div class="notifications-body">
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-11.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">جیمز وانوین</a></h4>
+<span>نظری در مورد وضعیت شما ارسال کرد</span>
+<span class="main-color">20 دقیقه پیش</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-12.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">هری لوپز</a></h4>
+<span>برای شما درخواست دوستی ارسال کرد</span>
+<span class="main-color">2 روز پیش</span>
+</div>
+</div>
+<div class="item d-flex justify-content-between align-items-center">
+<div class="figure">
+<a href="#"><img src="assets/images/user/user-13.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="text">
+<h4><a href="#">متیو اسمیت</a></h4>
+<span>افزودن عکس در گروه طراحی</span>
+<span class="main-color">3 روز پیش</span>
+</div>
+</div>
+<div class="view-all-notifications-btn">
+<a href="notifications.html" class="default-btn">مشاهده همه هشدارها</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown language-option">
+<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i class="flaticon-global"></i>
+<span class="lang-name"></span>
+</button>
+<div class="dropdown-menu language-dropdown-menu">
+<a class="dropdown-item" href="#">
+<img src="assets/images/iran.png" alt="flag">
+فارسی
+</a>
+<a class="dropdown-item" href="#">
+<img src="assets/images/china.png" alt="flag">
+简体中文
+</a>
+ <a class="dropdown-item" href="#">
+<img src="assets/images/uae.png" alt="flag">
+العربيّة
+</a>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="dropdown profile-nav-item">
+<a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="menu-profile">
+<img src="assets/images/user/user-1.jpg" class="rounded-circle" alt="image">
+<span class="name">متیو</span>
+<span class="status-online"></span>
+</div>
+</a>
+<div class="dropdown-menu">
+<div class="profile-header">
+<h3>متیو تورنر</h3>
+<a href="mailto: hello@zust.com"> hello@zust.com</a>
+</div>
+<ul class="profile-body">
+<li><i class="flaticon-user"></i> <a href="my-profile.html">پروفایل من</a></li>
+<li><i class="flaticon-settings"></i> <a href="setting.html">تنظیمات</a></li>
+<li><i class="flaticon-privacy"></i> <a href="privacy.html">حریم خصوصی</a></li>
+<li><i class="flaticon-information"></i> <a href="help-and-support.html">راهنما و پشتیبانی</a></li>
+<li><i class="flaticon-logout"></i> <a href="index.html">خروج</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="option-item">
+<div class="search-box">
+<form>
+<input type="text" class="input-search" placeholder="جستجو...">
+<button type="submit"><i class="ri-search-line"></i></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="sidemenu-area">
+<div class="responsive-burger-menu d-lg-none d-block">
+<span class="top-bar"></span>
+<span class="middle-bar"></span>
+<span class="bottom-bar"></span>
+</div>
+<div class="sidemenu-body">
+<ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+<li class="nav-item active">
+<a href="index.html" class="nav-link">
+<span class="icon"><i class="flaticon-newspaper"></i></span>
+ <span class="menu-title">خوراک اخبار</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="notifications.html" class="nav-link">
+<span class="icon"><i class="flaticon-bell"></i></span>
+<span class="menu-title">هشدارها</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="messages.html" class="nav-link">
+<span class="icon"><i class="flaticon-comment-1"></i></span>
+<span class="menu-title">پیام ها</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="friends.html" class="nav-link">
+<span class="icon"><i class="flaticon-friends"></i></span>
+<span class="menu-title">دوستان</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="groups.html" class="nav-link">
+<span class="icon"><i class="flaticon-team"></i></span>
+<span class="menu-title">گروه ها</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="favorite.html" class="nav-link">
+<span class="icon"><i class="flaticon-star"></i></span>
+<span class="menu-title">علاقه مندی ها</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="events.html" class="nav-link">
+<span class="icon"><i class="flaticon-calendar"></i></span>
+<span class="menu-title">رویدادها</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="live-chat.html" class="nav-link">
+<span class="icon"><i class="flaticon-live-chat"></i></span>
+<span class="menu-title">چت زنده</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="birthday.html" class="nav-link">
+<span class="icon"><i class="flaticon-cake"></i></span>
+<span class="menu-title">تولد</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="video.html" class="nav-link">
+<span class="icon"><i class="flaticon-video"></i></span>
+<span class="menu-title">ویدئو</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="weather.html" class="nav-link">
+<span class="icon"><i class="flaticon-cloudy"></i></span>
+<span class="menu-title">آب و هوا</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="marketplace.html" class="nav-link">
+<span class="icon"><i class="flaticon-online-shopping"></i></span>
+<span class="menu-title">مارکت پلیس</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="login.html" class="nav-link">
+ <span class="icon"><i class="flaticon-user"></i></span>
+<span class="menu-title">ورود</span>
+</a>
+</li>
+<li class="nav-item">
+<a href="register.html" class="nav-link">
+<span class="icon"><i class="flaticon-information"></i></span>
+<span class="menu-title">ثبت نام</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div class="content-page-box-area">
+<div class="row">
+<div class="col-lg-3 col-md-12">
+<aside class="widget-area">
+<div class="widget widget-view-profile">
+<div class="profile-box d-flex justify-content-between align-items-center">
+<a href="my-profile.html"><img src="assets/images/user/user-1.jpg" alt="image"></a>
+<div class="text ms-2">
+<h3><a href="my-profile.html">متیو تورنر</a></h3>
+<span>واشنگتن</span>
+</div>
+</div>
+<ul class="profile-statistics">
+<li>
+<a href="#">
+<span class="item-number">59862</span>
+<span class="item-text">پسندها</span>
+</a>
+</li>
+<li>
+<a href="#">
+<span class="item-number">8591</span>
+<span class="item-text">دنبال کننده</span>
+</a>
+</li>
+<li>
+<a href="#">
+<span class="item-number">784514</span>
+<span class="item-text">دنبال شونده</span>
+</a>
+</li>
+</ul>
+<div class="profile-likes">
+<span><i class="flaticon-heart-shape-outline"></i> پسند های جدید این هفته</span>
+<ul>
+<li>
+<a href="#"><img src="assets/images/user/user-22.jpg" alt="image"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/user/user-23.jpg" alt="image"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/user/user-24.jpg" alt="image"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/user/user-25.jpg" alt="image"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/user/user-26.jpg" alt="image"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/user/user-27.jpg" alt="image"></a>
+</li>
+</ul>
+</div>
+<div class="profile-btn">
+<a href="my-profile.html" class="default-btn">مشاهده پروفایل</a>
+</div>
+</div>
+<div class="widget widget-page-you-like">
+<h3 class="widget-title">صفحه ای که دوست دارید</h3>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg1" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">طراحی گرافیک</a>
+</h4>
+<span>1215 عضو</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg2" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">دیجیتال مارکتینگ</a>
+</h4>
+<span>1865 عضو</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg3" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">باشگاه ورزشی</a>
+</h4>
+<span>2051 عضو</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg4" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">رستوران رویایی</a>
+</h4>
+<span>5214 عضو</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg5" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">زندگی سفر</a>
+</h4>
+<span>9589 عضو</span>
+</div>
+</article>
+</div>
+<div class="widget widget-watch-video">
+<h3 class="widget-title">مشاهده ویدئو</h3>
+<div class="watch-video-slides owl-carousel owl-theme">
+ <div class="video-item">
+<img src="assets/images/watch-video/video-1.jpg" alt="image">
+<a href="https://www.youtube.com/watch?v=ODfy2YIKS1M" class="video-btn popup-youtube">
+<i class="ri-play-fill"></i>
+</a>
+</div>
+<div class="video-item">
+<img src="assets/images/watch-video/video-2.jpg" alt="image">
+<a href="https://www.youtube.com/watch?v=ODfy2YIKS1M" class="video-btn popup-youtube">
+<i class="ri-play-fill"></i>
+</a>
+</div>
+<div class="video-item">
+<img src="assets/images/watch-video/video-3.jpg" alt="image">
+<a href="https://www.youtube.com/watch?v=ODfy2YIKS1M" class="video-btn popup-youtube">
+<i class="ri-play-fill"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="widget widget-advertisement">
+<h3 class="widget-title">تبلیغات</h3>
+<div class="advertisement-image">
+<a href="#"><img src="assets/images/advertisement.jpg" alt="image"></a>
+</div>
+</div>
+<div class="widget widget-suggested-groups">
+<h3 class="widget-title">گروه های پیشنهادی</h3>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg1" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">گروه طراحی کاربری</a>
+</h4>
+<span>5000+ عضو</span>
+<a href="#" class="join-btn">عضویت در انجمن</a>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg2" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">گروه جستجوی شغلی</a>
+</h4>
+<span>5000+ عضو</span>
+<a href="#" class="join-btn">عضویت در انجمن</a>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg3" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">گروه عکاسی</a>
+</h4>
+<span>5000+ عضو</span>
+<a href="#" class="join-btn">عضویت در انجمن</a>
+</div>
+</article>
+</div>
+</aside>
+</div>
+<div class="col-lg-6 col-md-12">
+<div class="news-feed-area">
+<div class="news-feed news-feed-form">
+<h3 class="news-feed-title">ایجاد پست جدید</h3>
+<form>
+<div class="form-group">
+<textarea name="message" class="form-control" placeholder="اینجا چیزی بنویس..."></textarea>
+</div>
+<ul class="button-group d-flex justify-content-between align-items-center">
+<li class="photo-btn">
+<button type="submit"><i class="flaticon-gallery"></i> عکس</button>
+</li>
+<li class="video-btn">
+<button type="submit"><i class="flaticon-video"></i> ویدئو</button>
+</li>
+<li class="tag-btn">
+<button type="submit"><i class="flaticon-tag"></i> برچسب دوستان</button>
+</li>
+<li class="post-btn">
+<button type="submit">پست</button>
+</li>
+</ul>
+</form>
+</div>
+<div class="news-feed news-feed-stories">
+<div class="stories-title d-flex justify-content-between align-items-center">
+<h3>داستان ها</h3>
+<span><a href="#">مشاهده همه</a></span>
+</div>
+<div class="row">
+<div class="col-lg-2 col-sm-4 col-4">
+<div class="stories-item">
+<div class="stories-image">
+<a href="#">
+<img src="assets/images/user/user-1.jpg" alt="image">
+</a>
+<div class="add-icon">
+<a href="#"><i class="flaticon-add"></i></a>
+</div>
+</div>
+<span><a href="#">افزودن داستان</a></span>
+</div>
+</div>
+<div class="col-lg-2 col-sm-4 col-4">
+<div class="stories-item">
+<a href="#">
+<img src="assets/images/user/user-28.jpg" alt="image">
+</a>
+<span><a href="#">خیمنز</a></span>
+</div>
+</div>
+<div class="col-lg-2 col-sm-4 col-4">
+<div class="stories-item">
+<a href="#">
+<img src="assets/images/user/user-29.jpg" alt="image">
+</a>
+ <span><a href="#">لولیتا</a></span>
+</div>
+</div>
+<div class="col-lg-2 col-sm-4 col-4">
+<div class="stories-item">
+<a href="#">
+<img src="assets/images/user/user-13.jpg" alt="image">
+</a>
+<span><a href="#">متیو</a></span>
+</div>
+</div>
+<div class="col-lg-2 col-sm-4 col-4">
+<div class="stories-item">
+<a href="#">
+<img src="assets/images/user/user-30.jpg" alt="image">
+</a>
+<span><a href="#">روزول</a></span>
+</div>
+</div>
+<div class="col-lg-2 col-sm-4 col-4">
+<div class="stories-item">
+<a href="#">
+<img src="assets/images/user/user-31.jpg" alt="image">
+</a>
+<span><a href="#">کاتزمن</a></span>
+</div>
+</div>
+</div>
+</div>
+<div class="news-feed news-feed-post">
+<div class="post-header d-flex justify-content-between align-items-center">
+<div class="image">
+<a href="my-profile.html"><img src="assets/images/user/user-32.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="info ms-3">
+<span class="name"><a href="my-profile.html">جانی مارول</a></span>
+<span class="small-text"><a href="#">10 دقیقه پیش</a></span>
+</div>
+<div class="dropdown">
+<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-menu"></i></button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-edit"></i> ویرایش پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-private"></i> مخفی کردن پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-trash"></i> حذف پست</a></li>
+</ul>
+</div>
+</div>
+<div class="post-body">
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<div class="post-image">
+<img src="assets/images/news-feed-post/post-1.jpg" alt="image">
+ </div>
+<ul class="post-meta-wrap d-flex justify-content-between align-items-center">
+<li class="post-react">
+<a href="#"><i class="flaticon-like"></i><span>پسند</span> <span class="number">1499 </span></a>
+<ul class="react-list">
+<li>
+<a href="#"><img src="assets/images/react/react-1.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-2.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-3.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-4.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-5.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-6.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-7.png" alt="Like"></a>
+</li>
+</ul>
+</li>
+<li class="post-comment">
+<a href="#"><i class="flaticon-comment"></i><span>نظر</span> <span class="number">599 </span></a>
+</li>
+<li class="post-share">
+<a href="#"><i class="flaticon-share"></i><span>اشتراک گذاری</span> <span class="number">24 </span></a>
+</li>
+</ul>
+<div class="post-comment-list">
+<div class="comment-list">
+<div class="comment-image">
+<a href="my-profile.html"><img src="assets/images/user/user-33.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="comment-info">
+<h3>
+<a href="my-profile.html">دیوید مور</a>
+</h3>
+<span>5 دقیقه پیش</span>
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<ul class="comment-react">
+<li><a href="#" class="like">پسند(2)</a></li>
+<li><a href="#">پاسخ</a></li>
+ </ul>
+</div>
+</div>
+<div class="comment-list">
+<div class="comment-image">
+<a href="my-profile.html"><img src="assets/images/user/user-34.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="comment-info">
+<h3>
+<a href="my-profile.html">کلیر توی</a>
+</h3>
+<span>45 دقیقه پیش</span>
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<ul class="comment-react">
+<li><a href="#" class="like">پسند(12)</a></li>
+<li><a href="#">پاسخ</a></li>
+</ul>
+</div>
+</div>
+<div class="comment-list">
+<div class="comment-image">
+<a href="my-profile.html"><img src="assets/images/user/user-8.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="comment-info">
+<h3>
+<a href="my-profile.html">کارین ویلیامز</a>
+</h3>
+<span>5 دقیقه پیش</span>
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<ul class="comment-react">
+<li><a href="#" class="like">پسند(2)</a></li>
+<li><a href="#">پاسخ</a></li>
+</ul>
+</div>
+</div>
+<div class="more-comments">
+<a href="#">نظرات بیشتر+</a>
+</div>
+</div>
+<form class="post-footer">
+<div class="footer-image">
+<a href="#"><img src="assets/images/user/user-1.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="form-group">
+<textarea name="message" class="form-control" placeholder="نظری بنویس..."></textarea>
+<label><a href="#"><i class="flaticon-photo-camera"></i></a></label>
+</div>
+</form>
+</div>
+</div>
+<div class="news-feed news-feed-post">
+<div class="post-header d-flex justify-content-between align-items-center">
+<div class="image">
+<a href="my-profile.html"><img src="assets/images/user/user-35.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="info ms-3">
+<span class="name"><a href="my-profile.html">ویلیامز فنتون</a></span>
+<span class="small-text"><a href="#">50 دقیقه پیش</a></span>
+</div>
+<div class="dropdown">
+<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-menu"></i></button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-edit"></i> ویرایش پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-private"></i> مخفی کردن پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-trash"></i> حذف پست</a></li>
+</ul>
+</div>
+</div>
+<div class="post-body">
+<p>💗</p>
+<div class="post-image">
+<img src="assets/images/news-feed-post/post-2.jpg" alt="image">
+</div>
+<ul class="post-meta-wrap d-flex justify-content-between align-items-center">
+<li class="post-react">
+<a href="#"><i class="flaticon-like"></i><span>پسند</span> <span class="number">3 </span></a>
+<ul class="react-list">
+<li>
+<a href="#"><img src="assets/images/react/react-1.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-2.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-3.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-4.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-5.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-6.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-7.png" alt="Like"></a>
+</li>
+</ul>
+</li>
+<li class="post-comment">
+<a href="#"><i class="flaticon-comment"></i><span>نظر</span> <span class="number">0 </span></a>
+</li>
+ <li class="post-share">
+<a href="#"><i class="flaticon-share"></i><span>اشتراک گذاری</span> <span class="number">0 </span></a>
+</li>
+</ul>
+<form class="post-footer">
+<div class="footer-image">
+<a href="#"><img src="assets/images/user/user-2.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="form-group">
+<textarea name="message" class="form-control" placeholder="نظری بنویس..."></textarea>
+<label><a href="#"><i class="flaticon-photo-camera"></i></a></label>
+</div>
+</form>
+</div>
+</div>
+<div class="news-feed news-feed-post">
+<div class="post-header d-flex justify-content-between align-items-center">
+<div class="image">
+<a href="my-profile.html"><img src="assets/images/user/user-36.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="info ms-3">
+<span class="name"><a href="my-profile.html">ماریا دادسون</a></span>
+<span class="small-text"><a href="#">2 ساعت پیش</a></span>
+</div>
+<div class="dropdown">
+<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-menu"></i></button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-edit"></i> ویرایش پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-private"></i> مخفی کردن پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-trash"></i> حذف پست</a></li>
+</ul>
+</div>
+</div>
+<div class="post-body">
+<p>لبخند بزن 🧡</p>
+<div class="post-image">
+<img src="assets/images/news-feed-post/post-3.jpg" alt="image">
+</div>
+<ul class="post-meta-wrap d-flex justify-content-between align-items-center">
+<li class="post-react">
+<a href="#"><i class="flaticon-like"></i><span>پسند</span> <span class="number">15 </span></a>
+<ul class="react-list">
+<li>
+<a href="#"><img src="assets/images/react/react-1.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-2.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-3.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-4.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-5.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-6.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-7.png" alt="Like"></a>
+</li>
+</ul>
+</li>
+<li class="post-comment">
+<a href="#"><i class="flaticon-comment"></i><span>نظر</span> <span class="number">0 </span></a>
+</li>
+<li class="post-share">
+<a href="#"><i class="flaticon-share"></i><span>اشتراک گذاری</span> <span class="number">5 </span></a>
+</li>
+</ul>
+<form class="post-footer">
+<div class="footer-image">
+<a href="#"><img src="assets/images/user/user-15.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="form-group">
+<textarea name="message" class="form-control" placeholder="نظری بنویس..."></textarea>
+<label><a href="#"><i class="flaticon-photo-camera"></i></a></label>
+</div>
+</form>
+</div>
+</div>
+<div class="news-feed news-feed-post">
+<div class="post-header d-flex justify-content-between align-items-center">
+<div class="image">
+<a href="my-profile.html"><img src="assets/images/user/user-5.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="info ms-3">
+<span class="name"><a href="my-profile.html">کارین ویلیامز</a></span>
+<span class="small-text"><a href="#">10 دقیقه پیش</a></span>
+</div>
+<div class="dropdown">
+<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-menu"></i></button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-edit"></i> ویرایش پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-private"></i> مخفی کردن پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-trash"></i> حذف پست</a></li>
+</ul>
+ </div>
+</div>
+<div class="post-body">
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<div class="post-image">
+<img src="assets/images/news-feed-post/post-4.jpg" alt="image">
+</div>
+<ul class="post-meta-wrap d-flex justify-content-between align-items-center">
+<li class="post-react">
+<a href="#"><i class="flaticon-like"></i><span>پسند</span> <span class="number">1499 </span></a>
+<ul class="react-list">
+<li>
+<a href="#"><img src="assets/images/react/react-1.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-2.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-3.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-4.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-5.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-6.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-7.png" alt="Like"></a>
+</li>
+</ul>
+</li>
+<li class="post-comment">
+<a href="#"><i class="flaticon-comment"></i><span>نظر</span> <span class="number">599 </span></a>
+</li>
+<li class="post-share">
+<a href="#"><i class="flaticon-share"></i><span>اشتراک گذاری</span> <span class="number">24 </span></a>
+</li>
+</ul>
+<div class="post-comment-list">
+<div class="comment-list">
+<div class="comment-image">
+<a href="my-profile.html"><img src="assets/images/user/user-14.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="comment-info">
+<h3>
+<a href="my-profile.html">دیوید مور</a>
+</h3>
+<span>5 دقیقه پیش</span>
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<ul class="comment-react">
+<li><a href="#" class="like">پسند(2)</a></li>
+<li><a href="#">پاسخ</a></li>
+</ul>
+</div>
+</div>
+<div class="comment-list">
+<div class="comment-image">
+<a href="my-profile.html"><img src="assets/images/user/user-15.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="comment-info">
+<h3>
+<a href="my-profile.html">کلیر توی</a>
+</h3>
+<span>45 دقیقه پیش</span>
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<ul class="comment-react">
+<li><a href="#" class="like">پسند(12)</a></li>
+<li><a href="#">پاسخ</a></li>
+</ul>
+</div>
+</div>
+<div class="comment-list">
+<div class="comment-image">
+<a href="my-profile.html"><img src="assets/images/user/user-16.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="comment-info">
+<h3>
+<a href="my-profile.html">کارین ویلیامز</a>
+</h3>
+<span>5 دقیقه پیش</span>
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<ul class="comment-react">
+<li><a href="#" class="like">پسند(2)</a></li>
+<li><a href="#">پاسخ</a></li>
+</ul>
+</div>
+</div>
+<div class="more-comments">
+<a href="#">نظرات بیشتر+</a>
+</div>
+</div>
+<form class="post-footer">
+<div class="footer-image">
+<a href="#"><img src="assets/images/user/user-19.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="form-group">
+<textarea name="message" class="form-control" placeholder="نظری بنویس..."></textarea>
+<label><a href="#"><i class="flaticon-photo-camera"></i></a></label>
+</div>
+</form>
+</div>
+</div>
+<div class="news-feed news-feed-post">
+<div class="post-header d-flex justify-content-between align-items-center">
+<div class="image">
+<a href="my-profile.html"><img src="assets/images/user/user-18.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="info ms-3">
+<span class="name"><a href="my-profile.html">ماریا دادسون</a></span>
+<span class="small-text"><a href="#">2 ساعت پیش</a></span>
+</div>
+<div class="dropdown">
+<button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-menu"></i></button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-edit"></i> ویرایش پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-private"></i> مخفی کردن پست</a></li>
+<li><a class="dropdown-item d-flex align-items-center" href="#"><i class="flaticon-trash"></i> حذف پست</a></li>
+</ul>
+</div>
+</div>
+<div class="post-body">
+<p>لورم ایپسوم به سادگی ساختار چاپ و متن را در بر می گیرد. لورم ایپسوم به مدت 40 سال استاندارد صنعت بوده است.</p>
+<div class="post-image">
+<img src="assets/images/news-feed-post/post-5.jpg" alt="image">
+</div>
+<ul class="post-meta-wrap d-flex justify-content-between align-items-center">
+<li class="post-react">
+<a href="#"><i class="flaticon-like"></i><span>پسند</span> <span class="number">15 </span></a>
+<ul class="react-list">
+<li>
+<a href="#"><img src="assets/images/react/react-1.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-2.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-3.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-4.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-5.png" alt="Like"></a>
+</li>
+<li>
+<a href="#"><img src="assets/images/react/react-6.png" alt="Like"></a>
+</li>
+ <li>
+<a href="#"><img src="assets/images/react/react-7.png" alt="Like"></a>
+</li>
+</ul>
+</li>
+<li class="post-comment">
+<a href="#"><i class="flaticon-comment"></i><span>نظر</span> <span class="number">0 </span></a>
+</li>
+<li class="post-share">
+<a href="#"><i class="flaticon-share"></i><span>اشتراک گذاری</span> <span class="number">5 </span></a>
+</li>
+</ul>
+<form class="post-footer">
+<div class="footer-image">
+<a href="#"><img src="assets/images/user/user-22.jpg" class="rounded-circle" alt="image"></a>
+</div>
+<div class="form-group">
+<textarea name="message" class="form-control" placeholder="نظری بنویس..."></textarea>
+<label><a href="#"><i class="flaticon-photo-camera"></i></a></label>
+</div>
+</form>
+</div>
+</div>
+<div class="load-more-posts-btn">
+<a href="#"><i class="flaticon-loading"></i> بارگزاری پست های بیشتر</a>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-12">
+<aside class="widget-area">
+<div class="widget widget-weather">
+<div class="weather-image">
+<a href="#"><img src="assets/images/weather/weather.jpg" alt="image"></a>
+</div>
+</div>
+<div class="widget widget-birthday">
+<div class="birthday-title d-flex justify-content-between align-items-center">
+<h3>تولدهای امروز</h3>
+<span><a href="#">مشاهده همه</a></span>
+</div>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg1" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">ارلاین بنالی</a>
+</h4>
+<span>امروز</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg2" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">جک جولی</a>
+</h4>
+<span>امروز</span>
+</div>
+</article>
+<div class="birthday-title d-flex justify-content-between align-items-center">
+<h3>تولدهای اخیر</h3>
+<span><a href="#">مشاهده همه</a></span>
+</div>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg3" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">لولیتا بنالی</a>
+</h4>
+<span>18 دی</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg4" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">روزول گولی</a>
+</h4>
+<span>20 دی</span>
+</div>
+</article>
+<div class="birthday-title d-flex justify-content-between align-items-center">
+<h3>تولدهای پیش رو</h3>
+<span><a href="#">مشاهده همه</a></span>
+</div>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg5" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">کیندی ویلسون</a>
+</h4>
+<span>18 دی</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg6" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">پاتریکا لونی</a>
+</h4>
+<span>20 دی</span>
+</div>
+</article>
+<article class="item">
+<a href="#" class="thumb">
+<span class="fullimage bg7" role="img"></span>
+</a>
+<div class="info">
+<h4 class="title">
+<a href="#">جیمز نیلسون</a>
+</h4>
+<span>21 دی</span>
+</div>
+</article>
+</div>
+<div class="widget widget-explore-events">
+<h3 class="widget-title">کاوش رویدادها</h3>
+<article class="item">
+<a href="#"><img src="assets/images/explore-events/explore-1.jpg" alt="image"></a>
+ </article>
+<article class="item">
+<a href="#"><img src="assets/images/explore-events/explore-2.jpg" alt="image"></a>
+</article>
+</div>
+<div class="widget widget-who-following">
+<h3 class="widget-title">چه کسی دنبال می کند</h3>
+<div class="following-item d-flex justify-content-between align-items-center">
+<a href="#"><img src="assets/images/user/user-42.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">شاون لانچ</a></span>
+<span class="add-friend"><a href="#">افزودن</a></span>
+</div>
+<div class="following-item d-flex justify-content-between align-items-center">
+<a href="#"><img src="assets/images/user/user-43.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">شاون لانچ</a></span>
+<span class="add-friend"><a href="#">افزودن</a></span>
+</div>
+<div class="following-item d-flex justify-content-between align-items-center">
+<a href="#"><img src="assets/images/user/user-44.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">شاون لانچ</a></span>
+<span class="add-friend"><a href="#">افزودن</a></span>
+</div>
+<div class="following-item d-flex justify-content-between align-items-center">
+<a href="#"><img src="assets/images/user/user-45.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">شاون لانچ</a></span>
+<span class="add-friend"><a href="#">افزودن</a></span>
+</div>
+<div class="following-item d-flex justify-content-between align-items-center">
+<a href="#"><img src="assets/images/user/user-46.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">شاون لانچ</a></span>
+<span class="add-friend"><a href="#">افزودن</a></span>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+
+
+<div class="right-sidebar-area" data-simplebar>
+<div class="recent-chat-box">
+<div class="title">
+<h3>چت های اخیر</h3>
+</div>
+<div class="chat-body" data-simplebar>
+<div class="chat-item">
+<a href="#"><img src="assets/images/user/user-15.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">استفان ردینگ</a></span>
+<span class="status-online"></span>
+</div>
+<div class="chat-item">
+<a href="#"><img src="assets/images/user/user-16.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">استفان ردینگ</a></span>
+<span class="status-offline"></span>
+</div>
+<div class="chat-item">
+ <a href="#"><img src="assets/images/user/user-17.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">استفان ردینگ</a></span>
+<span class="status-online"></span>
+</div>
+<div class="chat-item">
+<a href="#"><img src="assets/images/user/user-8.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">استفان ردینگ</a></span>
+<span class="status-offline"></span>
+</div>
+<div class="chat-item">
+<a href="#"><img src="assets/images/user/user-9.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">استفان ردینگ</a></span>
+<span class="status-online"></span>
+</div>
+<div class="chat-item">
+<a href="#"><img src="assets/images/user/user-10.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">استفان ردینگ</a></span>
+<span class="status-offline"></span>
+</div>
+</div>
+</div>
+<div class="recent-contact-box">
+<div class="title">
+<h3>مخاطبین</h3>
+</div>
+<div class="contact-search-box">
+<form>
+<input type="text" class="input-search" placeholder="جستجو">
+<button type="submit"><i class="ri-search-line"></i></button>
+</form>
+</div>
+<div class="contact-body" data-simplebar>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-18.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-4.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-20.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-11.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-19.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-offline"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-12.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">هری لوپز</a></span>
+<span class="status-online"></span>
+ </div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-21.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-offline"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-16.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-2.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-14.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-offline"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-18.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">جیمز وانوین</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-5.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-offline"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-6.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">هری لوپز</a></span>
+<span class="status-online"></span>
+</div>
+<div class="contact-item">
+<a href="#"><img src="assets/images/user/user-7.jpg" class="rounded-circle" alt="image"></a>
+<span class="name"><a href="#">کارین ویلیامز</a></span>
+<span class="status-offline"></span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<div class="copyrights-area">
+<div class="container">
+<div class="row align-items-center">
+<p><i class="ri-copyright-line"></i> کپی رایت 1400 زوست. تمام حقوق قالب محفوظ است. طراحی و توسعه توسط <a href="https://www.rtl-theme.com/author/barat/?aff=barat" target="_blank">Barat Hadian</a></p>
+</div>
+</div>
+</div>
+
+
+<div class="go-top">
+<i class="ri-arrow-up-line"></i>
+</div>
+
+
+
+<script src={% static 'assets/js/jquery.min.js' %}></script>
+<script src={% static 'assets/js/bootstrap.bundle.min.js' %}></script>
+<script src={% static 'assets/js/jquery.magnific-popup.min.js' %}></script>
+<script src={% static 'assets/js/jquery-ui.min.js' %}></script>
+<script src={% static 'assets/js/simplebar.min.js' %}></script>
+<script src={% static 'assets/js/metismenu.min.js' %}></script>
+<script src={% static 'assets/js/owl.carousel.min.js' %}></script>
+<script src={% static 'assets/js/wow.min.js' %}></script>
+<script src={% static 'assets/js/main.js' %}></script>
+
+</body>
+</html>

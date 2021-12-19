@@ -9,7 +9,7 @@
                 {% if post.image %}
                     <img class="responsive" src="{{post.image.url}}" alt="image_of_post" style="width: 400px; height: 400px; border: solid red;">
                 {% else %}
-                    <img class="responsive" src="{% static 'download.jpeg' %}" alt="image_of_post" style=" border: solid red;">
+                    <img class="responsive" src="{% static 'download.jpeg' %}" alt="image_of_post" style="width: 400px; height: 400px; border: solid red;">
                 {% endif %}
             </div>
             <div class="col-md-6">
@@ -91,23 +91,31 @@
     <h1> comments : count = {{comments.count}} </h1>
     <hr>
     {% for comment in comments %}
-        <h6 style="color: brown;">
-            customer :{{comment.customer}}
-        </h6>
-        {% if comment.parent %}
-        <p>
-            <small>
-                replying on : {{comment.parent.writer}} - {{comment.parent.title}}
-            </small>
-        </p>
-        {% else %}
-        {% endif %}
-        <h1 style="color: brown;">
-            <a href="/user/{{comment.writer}}">user :{{comment.writer}}</a>
-        </h1>
-        <h2 style="color: rgb(60, 202, 47);">title :{{comment.title}}</h2>
-        <h3>body : {{comment.body}}</h3>
-        <h6>{{comment.created_on}}</h6>
+        <div class="row">
+            <div class="col-md-12">
+
+                    <h6 style="color: brown;">
+                        customer :{{comment.customer}}
+                    </h6>
+                    {% if comment.parent %}
+                        <p>
+                            <small>
+                                replying on : {{comment.parent.writer}} - {{comment.parent.title}}
+                            </small>
+                        </p>
+                    {% else %}
+                    {% endif %}
+
+                    <h1>
+                        <a href="/user/{{comment.writer}}">user :{{comment.writer}}</a>
+                    </h1>
+                    <h2 style="color: rgb(60, 202, 47);">title :{{comment.title}}</h2>
+                    <h3>body : {{comment.body}}</h3>
+                    <h6>{{comment.created_on}}</h6>
+
+            </div>
+        </div>
+
         {% if comment.writer == request.user %}
             <a class="btn btn-sm btn-danger" href="{% url 'delete-comment' comment_id=comment.id %}">
                 <small>حذف</small>
@@ -121,10 +129,31 @@
             <a class="btn btn-sm btn-info" href="{% url 'add-comment' comment_id=comment.id  %}">
                 <small>reply to this comment</small>
             </a>   
-            <form action="{% url 'class_detail' post_id=post.id %}" method="post" >
+            {% comment %} <form action="{% url 'class_detail' post_id=post.id %}" method="post" >
                 {% csrf_token %}
                 <input type="submit" ,  class="btn btn-warning", value="Like this comment" , name="comment_like">
+            </form> {% endcomment %}
+            {% if check_like_comment %}
+                {% for like in check_like_comment.filter %}
+                    {% if like.comments == comment %}
+                        <form action="{% url 'comment-like' comment_id=comment.id %}"  method="post" >
+                            {% csrf_token %}
+                            <input type="submit" ,  class="btn btn-danger", value="UnLike this comment" , name="comment_like">
+                        </form>
+                    {% else %}
+                        {% comment %} <form action="{% url 'comment-like' comment_id=comment.id %}"  method="post" >
+                            {% csrf_token %}
+                            <input type="submit" ,  class="btn btn-warning", value="Like this comment" , name="comment_like">
+                        </form> {% endcomment %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+            {% endif %}
+            <form action="{% url 'comment-like' comment_id=comment.id %}"  method="post" >
+                {% csrf_token %}
+                <input type="submit" ,  class="btn btn-warning", value="Like this comment in else" , name="comment_like">
             </form>
+
         {% endif %}
 
         <hr>

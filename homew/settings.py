@@ -134,7 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS  = [
     # str(BASE_DIR)  +"/static",
-    BASE_DIR / 'static'
+    BASE_DIR / 'static' ,
 ]
 
 MEDIA_ROOT =  str(BASE_DIR /'media')

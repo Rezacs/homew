@@ -135,6 +135,40 @@
             <hr>
             <hr>
         <!-- Section-->
+        {% comment %} <div class="container" style="text-align: center; min-height: 400px; margin-top: 30px; margin-bottom: 30px;  ">
+            <div class="row">
+                <div class="col-md-9" style="border: solid red;">
+                    {% if messages %}
+                    {% for message in messages %}
+                        <div id="messg" class="alert alert-{{message.tags}}" role="alert">
+                            {{message}}
+                            <a href="#" class="del-msg">&times;</a>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+                    
+                    {% block content %}
+                    
+                    {% endblock content %}
+                </div>
+
+                <div class="col-md-3" style="border: solid red; ">
+                    {% for post in user.post_set.all  %}
+                        {{post.title}}
+                        <br>
+                    {% endfor %}
+                    <p>
+                        <h3>recent followings :</h3>
+                        {% for t in user.userconnections_set.all %}
+                            salam
+                            {{t}}                          
+                        {% endfor %}
+                    </p>
+                    ss
+                </div>
+            </div>
+        </div> {% endcomment %}
+
         <div class="container mt-3" style="text-align: center; min-height: 400px;">
             {% if messages %}
                     {% for message in messages %}
@@ -149,6 +183,7 @@
             
             {% endblock content %}
         </div>
+
         <footer class="py-5 bg-dark">
             <div class="container">
                 <p class="m-0 text-center text-white">Copyright &copy; Reza Almassi 2021</p>

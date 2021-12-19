@@ -110,9 +110,11 @@ def class_post_detail ( request , post_id ) :
     if user.is_authenticated :
         customer = Customer.objects.get(user_name =user.username)
         check_like_post = Post_Likes.objects.filter(post = post).filter(writer = user)
+        check_like_comment = Post_Comment_likes.objects.filter(comments__post = post).filter(writer = user)
     else :
         customer = Customer.objects.get(user_name ='Anonymous')
         check_like_post = False
+        check_like_comment = False
     form = CommentModelForm()
     form2 = LikePostForm()
     form3 = LikeCommentForm()
@@ -128,6 +130,7 @@ def class_post_detail ( request , post_id ) :
                 comment.writer= user
                 comment.save()
                 messages.add_message(request, messages.SUCCESS, 'comment was saved !')
+
         if 'form2' in request.POST :
             form2 = LikePostForm(request.POST)
             if form2.is_valid() :
@@ -139,6 +142,7 @@ def class_post_detail ( request , post_id ) :
                     like.writer = user
                     like.post = post
                     like.save()
+
         return redirect(f'/class_post_detail/{post.id}')
 
         # if form3.is_valid() :
@@ -156,10 +160,31 @@ def class_post_detail ( request , post_id ) :
         'likes' : likes ,
         'form2' : form2 ,
         'check_like_post' : check_like_post ,
+        'check_like_comment' : check_like_comment ,
         'form3' : form3
     })
 
 #
+
+@login_required(login_url='login-mk')
+def comment_like ( request , comment_id ) :
+    comment = get_object_or_404(Post_Comments , id =comment_id )
+    post = comment.post
+    user = request.user
+    customer = Customer.objects.get(user_name =user.username)
+    if request.method == "POST" :
+        if 'comment_like' in request.POST :
+            check = Post_Comment_likes.objects.filter(comments = comment).filter(writer = user)
+            if check :
+                check.delete()
+                messages.add_message(request, messages.INFO , 'unliked comment !')
+            else :
+                UserConnections.objects.create(following=request.user,follower=user)
+                Post_Comment_likes.objects.create(comments = comment , customer = customer , writer = user)
+                messages.add_message(request, messages.INFO , 'liked comment !')
+                
+    return redirect(f'/class_post_detail/{post.id}')
+
 
 def add_comment ( request , comment_id ) :
     comment = get_object_or_404(Post_Comments , id =comment_id )
@@ -1062,6 +1087,28 @@ def send_message ( request , username ) :
 
     return render ( request , 'poroje/send_message.html' , {'form' : form , 'reciever_user' : reciever_user} )
 
+class MyFormView(View):
+    form_class = SendMessageForm
+    initial = {'key': 'value'}
+    template_name = 'poroje/notify_followers.html'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            for f in UserConnections.objects.filter(follower=self.request.user) :
+                message = form.save(commit=False)
+                message.writer= self.request.user
+                message.reciever = f.following
+                message.save()
+
+            messages.add_message(request, messages.SUCCESS, 'message sent !')
+
+        return render(request, self.template_name, {'form': form})
+
 @login_required(login_url='login-mk')
 def inbox (request ) :
 
@@ -1141,6 +1188,23 @@ def liked_details (request , post_id) :
         'likes':likes,
         'post' : postz
     })
+
+class ConnectionListView(ListView):
+    template_name = 'class_base.html'
+    model = UserConnections
+    context_object_name = 'work_list'
+
+    def get_queryset(self):
+        return UserConnections.objects.filter(follower=self.request.user).order_by('-created_on')
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ConnectionListView, self).get_context_data(**kwargs)
+        # Insert categories so that it can be used in template
+        # context['categories'] = Work.categories
+        return context
+
+
 
 
 

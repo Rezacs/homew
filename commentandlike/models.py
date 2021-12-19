@@ -68,7 +68,7 @@ class Post_Comments ( CommonInfo ,models.Model ) :
     parent = models.ForeignKey( 'self' , default=None , null=True , blank=True,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f"{self.customer}-{self.post}-{self.created_on}"
+        return f"{self.customer}-{self.post}-{self.title}"
 
 class Post_Comment_likes ( CommonInfo ,models.Model ) :
     comments = models.ForeignKey(Post_Comments, on_delete=models.CASCADE)

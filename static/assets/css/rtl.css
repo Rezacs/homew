@@ -1,0 +1,795 @@
+[type="email"], [type="number"], [type="tel"], [type="url"] {
+    direction: rtl;
+}
+
+
+
+
+.me-2 {
+	margin-left: .5rem!important;
+	margin-right: 0!important
+}
+.ms-2 {
+	margin-right: .5rem!important;
+	margin-left: 0!important
+}
+.ms-3 {
+	margin-right: 1rem!important;
+	margin-left: 0!important
+}
+.me-3 {
+	margin-left: 1rem!important;
+	margin-right: 0!important
+}
+.navbar-brand {
+	margin-left: 1rem;
+	margin-right: 0
+}
+.main-content-wrapper {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .search-box .input-search {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .search-box button {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item:last-child {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .friend-requests-nav-item.dropdown .dropdown-menu {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .friend-requests-nav-item.dropdown .dropdown-menu .friend-requests-body .item .content {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .friend-requests-nav-item.dropdown .dropdown-menu .friend-requests-body .item .content .text {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .messages-nav-item.dropdown .dropdown-menu {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .messages-nav-item.dropdown .dropdown-menu .messages-search-box .input-search {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .messages-nav-item.dropdown .dropdown-menu .messages-search-box button {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .messages-nav-item.dropdown .dropdown-menu .messages-body .item .text {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .notifications-nav-item.dropdown .dropdown-menu {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .notifications-nav-item.dropdown .dropdown-menu .notifications-body .item .text {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .language-option .language-dropdown-menu .dropdown-item img {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item::before {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item .dropdown-bs-toggle {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item .dropdown-bs-toggle::before {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item .menu-profile .status-online {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item .menu-profile img {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item.dropdown .dropdown-menu {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item.dropdown .dropdown-menu .profile-body li {
+
+}
+.main-content-wrapper .navbar-area .main-navbar .navbar .others-options .option-item .profile-nav-item.dropdown .dropdown-menu .profile-body li i {
+
+}
+.sidemenu-area {
+
+}
+.sidemenu-area .sidemenu-body .sidemenu-nav .nav-item .nav-link {
+
+}
+.sidemenu-area .sidemenu-body .sidemenu-nav .nav-item .nav-link .icon {
+
+}
+.sidemenu-area .sidemenu-body .sidemenu-nav .nav-item .nav-link::before {
+
+}
+.sidemenu-area.active-sidemenu-area .sidemenu-body .sidemenu-nav .nav-item .nav-link::before {
+
+}
+.right-sidebar-area {
+	left: 0;
+	right: auto
+}
+.right-sidebar-area .recent-chat-box .chat-body .chat-item img {
+	margin-left: 5px;
+	margin-right: 0
+}
+.right-sidebar-area .recent-chat-box .chat-body .chat-item .status-online {
+	right: 30px;
+	left: auto
+}
+.right-sidebar-area .recent-chat-box .chat-body .chat-item .status-offline {
+	right: 30px;
+	left: auto
+}
+.right-sidebar-area .recent-contact-box .contact-search-box .input-search {
+	padding: 0 15px 0 0
+}
+.right-sidebar-area .recent-contact-box .contact-search-box button {
+	left: 0;
+	right: auto
+}
+.right-sidebar-area .recent-contact-box .contact-body .contact-item img {
+	margin-left: 5px;
+	margin-right: 0
+}
+.right-sidebar-area .recent-contact-box .contact-body .contact-item .status-online {
+	right: 30px;
+	left: auto
+}
+.right-sidebar-area .recent-contact-box .contact-body .contact-item .status-offline {
+	right: 30px;
+	left: auto
+}
+.widget-area .widget-view-profile .profile-statistics li {
+	margin-left: 30px;
+	margin-right: 0
+}
+.widget-area .widget-view-profile .profile-statistics li:last-child {
+	margin-left: 0
+}
+.widget-area .widget-view-profile .profile-statistics li::before {
+	left: -18px;
+	right: auto
+}
+.widget-area .widget-view-profile .profile-likes ul li {
+	margin-right: -18px;
+	margin-left: 0
+}
+.widget-area .widget-view-profile .profile-likes span {
+	padding-right: 22px;
+	padding-left: 0
+}
+.widget-area .widget-view-profile .profile-likes span i {
+	right: 0;
+	left: auto
+}
+.widget-area .widget-birthday .item .thumb {
+	float: right;
+	margin-left: 12px;
+	margin-right: 0
+}
+.widget-area .widget-who-following .following-item .rounded-circle {
+	margin-left: 10px;
+	margin-right: 0
+}
+.widget-area .widget-page-you-like .item .thumb {
+	float: right;
+	margin-left: 12px;
+	margin-right: 0
+}
+.widget-area .widget-suggested-groups .item .thumb {
+	float: right;
+	margin-left: 12px;
+	margin-right: 0
+}
+.news-feed-area .news-feed-form form .button-group .photo-btn button {
+
+}
+.news-feed-area .news-feed-form form .button-group .photo-btn button i {
+
+}
+.news-feed-area .news-feed-form form .button-group .video-btn button {
+
+}
+.news-feed-area .news-feed-form form .button-group .video-btn button i {
+
+}
+.news-feed-area .news-feed-form form .button-group .tag-btn button {
+
+}
+.news-feed-area .news-feed-form form .button-group .tag-btn button i {
+
+}
+.news-feed-area .news-feed-post .post-header .dropdown .dropdown-menu {
+
+}
+.news-feed-area .news-feed-post .post-header .dropdown .dropdown-menu li .dropdown-item {
+
+}
+.news-feed-area .news-feed-post .post-header .dropdown .dropdown-menu li .dropdown-item i {
+
+}
+.news-feed-area .news-feed-post .post-body .post-meta-wrap .post-react .react-list {
+
+}
+.news-feed-area .news-feed-post .post-body .post-comment-list .comment-list .comment-image {
+
+}
+.news-feed-area .news-feed-post .post-body .post-comment-list .comment-list .comment-info {
+
+}
+.news-feed-area .news-feed-post .post-body .post-footer .footer-image {
+
+}
+.news-feed-area .news-feed-post .post-body .post-footer .form-group {
+
+}
+.news-feed-area .news-feed-post .post-body .post-footer .form-group label {
+
+}
+.go-top {
+	left: 20px;
+	right: auto
+}
+.my-profile-inner-box .profile-cover-image .edit-cover-btn {
+	left: 30px;
+	right: auto
+}
+.my-profile-inner-box .profile-info-box .profile-social {
+	left: 50px;
+	right: auto
+}
+.my-profile-inner-box .profile-info-box .profile-social li {
+	margin-left: 10px;
+	margin-right: 0
+}
+.my-profile-inner-box .profile-info-box .profile-social li:last-child {
+	margin-left: 0
+}
+.my-profile-inner-box .profile-info-box .inner-info-box .info-image .icon {
+	left: 15px;
+	right: auto
+}
+.my-profile-inner-box .profile-info-box .inner-info-box .statistics li {
+	margin-left: 30px;
+	margin-right: 0
+}
+.my-profile-inner-box .profile-info-box .inner-info-box .statistics li:last-child {
+	margin-left: 0
+}
+.my-profile-inner-box .profile-info-box .inner-info-box .statistics li::before {
+	left: -18px;
+	right: auto
+}
+.my-profile-inner-box .profile-info-box .profile-list-tabs .nav .nav-item {
+	margin-left: 50px;
+	margin-right: 0
+}
+.my-profile-inner-box .profile-info-box .profile-list-tabs .nav .nav-item:last-child {
+	margin-left: 0
+}
+.my-profile-inner-box .profile-info-box .profile-list-tabs .nav .nav-item .nav-link::before {
+	right: 0;
+	left: auto
+}
+.about-personal-information .about-header .dropdown .dropdown-menu {
+	right: auto!important;
+	left: 0!important
+}
+.about-personal-information .about-header .dropdown .dropdown-menu li .dropdown-item {
+	padding: 8px 40px 8px 15px
+}
+.about-personal-information .about-header .dropdown .dropdown-menu li .dropdown-item i {
+	right: 15px;
+	left: auto
+}
+.about-details-information .information-box-content .information-header .dropdown .dropdown-menu {
+	right: auto!important;
+	left: 0!important
+}
+.about-details-information .information-box-content .information-header .dropdown .dropdown-menu li .dropdown-item {
+	padding: 8px 40px 8px 15px
+}
+.about-details-information .information-box-content .information-header .dropdown .dropdown-menu li .dropdown-item i {
+	right: 15px;
+	left: auto
+}
+.single-friends-card .friends-image .icon {
+	left: 15px;
+	right: auto
+}
+.single-friends-card .friends-content .statistics li {
+	margin-left: 30px;
+	margin-right: 0
+}
+.single-friends-card .friends-content .statistics li:last-child {
+	margin-left: 0
+}
+.single-friends-card .friends-content .statistics li::before {
+	left: -18px;
+	right: auto
+}
+.photos-inner-box-style .nav .nav-item {
+	margin-left: 30px;
+	margin-right: 0
+}
+.photos-inner-box-style .nav .nav-item:last-child {
+	margin-left: 0
+}
+.photos-inner-box-style .nav .nav-item .nav-link::before {
+	right: 0;
+	left: auto
+}
+.photos-inner-box-style .photos-search-box .input-search {
+	padding: 0 25px 0 0
+}
+.photos-inner-box-style .photos-search-box button {
+	left: 0;
+	right: auto
+}
+.single-photos-card .icon {
+	left: 15px;
+	right: auto
+}
+.single-photos-card .icon a {
+	margin-left: 5px;
+	margin-right: 0
+}
+.single-photos-card .icon a:last-child {
+	margin-right: 0
+}
+.account-setting-list-tabs .nav .nav-item {
+	margin-left: 35px;
+	margin-right: 0
+}
+.account-setting-list-tabs .nav .nav-item:last-child {
+	margin-right: 0
+}
+.account-setting-list-tabs .nav .nav-item .nav-link::before {
+	right: 0;
+	left: auto
+}
+.account-setting-form .form-group .form-select {
+	background-position: left .75rem center
+}
+.form-check {
+	padding-right: 1.5em;
+	padding-left: 0
+}
+.form-check .form-check-input {
+	float: right;
+	margin-right: -1.5em;
+	margin-left: 0
+}
+.help-and-support-search-box form .input-search {
+	padding: 0 25px 0 0
+}
+.help-and-support-search-box form button {
+	left: 0;
+	right: auto
+}
+.all-notifications-body .item .figure {
+	right: 0;
+	left: auto
+}
+.all-notifications-body .item .text {
+	padding-right: 85px;
+	padding-left: 0
+}
+.all-notifications-body .all-notifications-header .dropdown .dropdown-menu {
+	right: auto!important;
+	left: 0!important
+}
+.all-notifications-body .all-notifications-header .dropdown .dropdown-menu li .dropdown-item {
+	padding: 8px 40px 8px 15px
+}
+.all-notifications-body .all-notifications-header .dropdown .dropdown-menu li .dropdown-item i {
+	right: 15px;
+	left: auto
+}
+.all-messages-body .chat-list-footer form {
+
+}
+.all-messages-body .chat-list-footer form .send-btn {
+
+}
+.friends-inner-box-style .nav .nav-item {
+	margin-left: 30px;
+	margin-right: 0
+}
+.friends-inner-box-style .nav .nav-item:last-child {
+	margin-left: 0
+}
+.friends-inner-box-style .nav .nav-item .nav-link::before {
+	right: 0;
+	left: auto
+}
+.friends-inner-box-style .friends-search-box .input-search {
+	padding: 0 25px 0 0
+}
+.friends-inner-box-style .friends-search-box button {
+	left: 0;
+	right: auto
+}
+.groups-inner-box-style .nav .nav-item {
+	margin-left: 30px;
+	margin-right: 0
+}
+.groups-inner-box-style .nav .nav-item:last-child {
+	margin-left: 0
+}
+.groups-inner-box-style .nav .nav-item .nav-link::before {
+	right: 0;
+	left: auto
+}
+.groups-inner-box-style .groups-search-box .input-search {
+	padding: 0 25px 0 0
+}
+.groups-inner-box-style .groups-search-box button {
+	left: 0;
+	right: auto
+}
+.single-groups-card .groups-content .statistics li {
+	margin-left: 30px;
+	margin-right: 0
+}
+.single-groups-card .groups-content .statistics li:last-child {
+	margin-left: 0
+}
+.single-groups-card .groups-content .statistics li::before {
+	left: -18px;
+	right: auto
+}
+.favourite-inner-box-style .favourite-search-box .input-search {
+	padding: 0 25px 0 0
+}
+.favourite-inner-box-style .favourite-search-box button {
+	left: 0;
+	right: auto
+}
+.favourite-table table thead tr th:first-child {
+	padding-right: 0
+}
+.favourite-table table tbody tr td:first-child {
+	padding-right: 0
+}
+.favourite-table table tbody tr td.info {
+	padding-right: 85px;
+	padding-left: 0
+}
+.favourite-table table tbody tr td.info a img {
+	right: 0;
+	left: auto
+}
+.events-inner-box-style .events-search-box .input-search {
+	padding: 0 25px 0 0
+}
+.events-inner-box-style .events-search-box button {
+	left: 0;
+	right: auto
+}
+.events-form .form-group .form-select {
+	background-position: left .75rem center
+}
+.live-chat-body .live-chat-header .live-chat-info {
+
+}
+.live-chat-body .live-chat-header .live-chat-info a img {
+
+}
+.live-chat-body .live-chat-right li {
+
+}
+.live-chat-body .live-chat-right li:last-child {
+
+}
+.live-chat-body .chat-list-footer form {
+
+}
+.live-chat-body .chat-list-footer form .send-btn {
+
+}
+.all-birthday-body .birthday-send-box .send-item {
+	padding-right: 70px;
+	padding-left: 0
+}
+.all-birthday-body .birthday-send-box .send-item .rounded-circle {
+	right: 0;
+	left: auto
+}
+.all-birthday-body .birthday-send-box .send-item .send-content form {
+	padding-left: 105px;
+	padding-right: 0
+}
+.all-birthday-body .birthday-send-box .send-item .send-content form .send-btn {
+	left: 0;
+	right: auto
+}
+.all-birthday-body .birthday-send-box .send-item .send-content form .form-control {
+	padding: 10px 32px 10px 20px
+}
+.all-birthday-body .birthday-send-box .send-item .send-content form::before {
+	right: 10px;
+	left: auto
+}
+.all-birthday-body .birthday-list-box .list-item .list-content {
+	padding-right: 80px;
+	padding-left: 0
+}
+.all-birthday-body .birthday-list-box .list-item .list-content .rounded-circle {
+	right: 0;
+	left: auto
+}
+.single-video-card .video-info {
+
+}
+.single-video-card .video-info .rounded-circle {
+
+}
+.single-video-card .meta-wrap li {
+
+}
+.single-video-card .meta-wrap li:last-child {
+
+}
+.single-video-card .video-form .input-search {
+
+}
+.single-video-card .video-form button {
+
+}
+.page-banner-box {
+	padding-right: 80px;
+	padding-left: 0
+}
+.marketplace-inner-box-style .form-select {
+	padding: 10px 15px 10px 45px;
+	background-position: left .75rem center
+}
+.single-marketplace-card .marketplace-image .price {
+	left: 10px;
+	right: auto
+}
+.single-marketplace-card .marketplace-content p {
+	padding-right: 18px;
+	padding-left: 0
+}
+.single-marketplace-card .marketplace-content p i {
+	right: 0;
+	left: auto
+}
+.products-details-content .location {
+	padding-right: 18px;
+	padding-left: 0
+}
+.products-details-content .location i {
+	right: 0;
+	left: auto
+}
+.products-details-content .seller-information .information-content {
+	padding-right: 70px;
+	padding-left: 0
+}
+.products-details-content .seller-information .information-content img {
+	right: 0;
+	left: auto
+}
+.products-details-content .seller-information form button {
+	left: 0;
+	right: auto
+}
+.login-form form .remember-me-wrap [type=checkbox]:checked+label, .login-form form .remember-me-wrap [type=checkbox]:not(:checked)+label {
+	padding-right: 28px;
+	padding-left: 0
+}
+.login-form form .remember-me-wrap [type=checkbox]:checked+label:before, .login-form form .remember-me-wrap [type=checkbox]:not(:checked)+label:before {
+	right: 0;
+	left: auto
+}
+.login-form form .remember-me-wrap [type=checkbox]:checked+label:after, .login-form form .remember-me-wrap [type=checkbox]:not(:checked)+label:after {
+	right: 5px;
+	left: auto
+}
+.register-form form .remember-me-wrap [type=checkbox]:checked+label, .register-form form .remember-me-wrap [type=checkbox]:not(:checked)+label {
+	padding-right: 22px;
+	padding-left: 0
+}
+.register-form form .remember-me-wrap [type=checkbox]:checked+label:before, .register-form form .remember-me-wrap [type=checkbox]:not(:checked)+label:before {
+	right: 0;
+	left: auto
+}
+.register-form form .remember-me-wrap [type=checkbox]:checked+label:after, .register-form form .remember-me-wrap [type=checkbox]:not(:checked)+label:after {
+	right: 4px;
+	left: auto
+}
+.profile-authentication-area .home-btn-icon {
+	right: 10px;
+	left: auto
+}
+@media only screen and (max-width:767px) {
+	.sidemenu-area {
+
+	}
+	.sidemenu-area.active-sidemenu-area {
+
+	}
+	.sidemenu-area.active-sidemenu-area .sidemenu-body .sidemenu-nav .nav-item .nav-link {
+
+	}
+	.main-content-wrapper {
+
+	}
+	.main-content-wrapper .main-responsive-nav .main-responsive-menu {
+
+	}
+	.others-option-for-responsive .dot-menu {
+
+	}
+	.others-option-for-responsive .container .container {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item .dropdown-bs-toggle {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item .dropdown-bs-toggle::before {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item .menu-profile img {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item.dropdown .dropdown-menu {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item.dropdown .dropdown-menu .profile-body li {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item.dropdown .dropdown-menu .profile-body li i {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .search-box .input-search {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .search-box button {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .language-option .language-dropdown-menu .dropdown-item img {
+
+	}
+	.news-feed-area .news-feed-form form .button-group .photo-btn button {
+
+	}
+	.news-feed-area .news-feed-form form .button-group .video-btn button {
+
+	}
+	.news-feed-area .news-feed-form form .button-group .tag-btn button {
+
+	}
+	.news-feed-area .news-feed-post .post-body .post-comment-list .comment-list .comment-info {
+
+	}
+	.news-feed-area .news-feed-post .post-body .post-footer .form-group {
+
+	}
+	.my-profile-inner-box .profile-info-box .profile-list-tabs .nav .nav-item {
+		margin-left: 10px
+	}
+	.account-setting-list-tabs .nav .nav-item {
+		margin-left: 20px
+	}
+	.all-messages-body .chat-list-footer form {
+
+	}
+	.favourite-table table tbody tr td.info {
+		padding-left: 20px
+	}
+	.events-form {
+		padding: 20px
+	}
+	.live-chat-body .live-chat-header .live-chat-info {
+
+	}
+	.live-chat-body .live-chat-right li {
+
+	}
+	.live-chat-body .chat-list-footer form {
+
+	}
+	.all-birthday-body .birthday-send-box .send-item {
+		padding-right: 0
+	}
+}
+@media only screen and (max-width:991px) and (min-width:768px) {
+	.sidemenu-area {
+
+	}
+	.sidemenu-area.active-sidemenu-area {
+
+	}
+	.sidemenu-area.active-sidemenu-area .sidemenu-body .sidemenu-nav .nav-item .nav-link {
+
+	}
+	.main-content-wrapper {
+
+	}
+	.main-content-wrapper .main-responsive-nav .main-responsive-menu {
+
+	}
+	.others-option-for-responsive .dot-menu {
+
+	}
+	.others-option-for-responsive .container .container {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item .dropdown-bs-toggle {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item .dropdown-bs-toggle::before {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item .menu-profile img {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item.dropdown .dropdown-menu {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item.dropdown .dropdown-menu .profile-body li {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .profile-nav-item.dropdown .dropdown-menu .profile-body li i {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .search-box .input-search {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .search-box button {
+
+	}
+	.others-option-for-responsive .option-inner .others-options .option-item .language-option .language-dropdown-menu .dropdown-item img {
+
+	}
+	.news-feed-area .news-feed-post .post-body .post-comment-list .comment-list .comment-info {
+
+	}
+	.news-feed-area .news-feed-post .post-body .post-footer .form-group {
+
+	}
+	.account-setting-list-tabs .nav .nav-item {
+		margin-left: 8px
+	}
+	.favourite-table table tbody tr td.info {
+		padding-left: 20px
+	}
+	.all-birthday-body .birthday-list-box .list-item .list-content {
+		padding-right: 55px
+	}
+}
+@media only screen and (max-width:1199px) and (min-width:992px) {
+	.sidemenu-area {
+
+	}
+	.sidemenu-area.active-sidemenu-area {
+
+	}
+	.sidemenu-area.active-sidemenu-area .sidemenu-body .sidemenu-nav .nav-item .nav-link {
+
+	}
+	.main-content-wrapper {
+
+	}
+	.main-content-wrapper .main-responsive-nav .main-responsive-menu {
+
+	}
+	.widget-area .widget-view-profile .profile-statistics li {
+		margin-left: 15px
+	}
+	.widget-area .widget-view-profile .profile-statistics li::before {
+		left: -10px
+	}
+	.favourite-table table tbody tr td.info {
+		padding-left: 20px
+	}
+}
