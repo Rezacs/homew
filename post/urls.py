@@ -39,6 +39,8 @@ urlpatterns = [
     path('send_message/<str:username>' , send_message ,name='send-message' ),
     path('notify_followers' , MyFormView.as_view() ,name='notify-followers' ),
     path('comment_like/<int:comment_id>' , comment_like ,name='comment-like' ),
+    path('liked_posts' , Liked_Posts ,name='liked-posts' ),
+    path('unlike/<int:post_id>' , unlike ,name='unlike' ),
     path('inbox' , inbox ,name='inbox' ),
     path('post_liked_details/<int:post_id>' , liked_details ,name='post_liked_details' ),
     #CW20

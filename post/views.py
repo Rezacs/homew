@@ -1205,7 +1205,36 @@ class ConnectionListView(ListView):
         return context
 
 
+@login_required(login_url='login-mk')
+def Liked_Posts (request) :
 
+    user = User.objects.get(username=request.user.username)
+    likes = Post_Likes.objects.filter(writer = user)
+
+    if request.method == "POST" :
+        next = request.GET.get('next')
+        #if next :
+            # return redirect (request.GET.get('next'))
+        if 'follow' in request.POST :
+            check = UserConnections.objects.filter(following=request.user,follower=next)
+            check.delete()
+            messages.add_message(request, messages.INFO , 'user Unfollowed !')
+                
+                
+    return render ( request , 'poroje/liked_posts.html' , {
+        'likes':likes,
+        'pointed_user' : user
+    })
+
+
+@login_required(login_url='login-mk')
+def unlike(request,post_id):
+    
+    user = User.objects.get(username=request.user.username)    
+    like = Post_Likes.objects.filter(writer = user).filter(post__id=post_id)
+    like.delete()
+    messages.add_message(request, messages.SUCCESS, 'post was unliked !')
+    return redirect('/post_urls/liked_posts')
 
 
 

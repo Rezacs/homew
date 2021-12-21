@@ -1,0 +1,31 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="col-md-12">
+        <h1>Relations of {{pointed_user.username}}</h1>
+            <div class="row mt-1 g-3 btn-light " style="height: 100%;">
+                <h1>Followings :</h1>
+                {% for like in likes %}
+                    <div class="col-md-3 " style="height: auto; ">
+                        <div class="card h-100" >
+                            <small>{{like.created_on | date}}</small>
+                            <a href="/class_post_detail/{{like.post.id}}"><h2>post : {{like.post}}</h2></a>
+                            <a href="/user/{{like.post.writer.username}}"><h6>user : {{like.post.writer}}</h6></a>
+                            {% if request.user == pointed_user %}
+                            
+                                <form  action="{% url 'unlike' post_id=like.post.id  %}" method="post" >
+                                    {% comment %} username=pointed_user.username  ?next={{follower.follower}} {% endcomment %}
+                                    {% csrf_token %}
+                                    <input type="submit" ,  class="btn btn-danger", value="UNlike post !" , name="follow">
+                                </form>
+
+                            {% endif %}
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>      
+{% endblock content %}
