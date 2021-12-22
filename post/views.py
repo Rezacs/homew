@@ -369,8 +369,8 @@ def CW_ajax (request) :
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 @api_view(['GET', 'PUT', 'DELETE'])
-@permission_classes([IsAuthenticated])
-@authentication_classes([])
+#@permission_classes([IsAuthenticated])
+#@authentication_classes([])
 def post_detail_update_delete(request, id):
 
     post = get_object_or_404(Post, id=id)
@@ -1213,12 +1213,10 @@ def Liked_Posts (request) :
 
     if request.method == "POST" :
         next = request.GET.get('next')
-        #if next :
-            # return redirect (request.GET.get('next'))
-        if 'follow' in request.POST :
-            check = UserConnections.objects.filter(following=request.user,follower=next)
-            check.delete()
-            messages.add_message(request, messages.INFO , 'user Unfollowed !')
+        # if 'follow' in request.POST :
+        #     check = UserConnections.objects.filter(following=request.user,follower=next)
+        #     check.delete()
+        #     messages.add_message(request, messages.INFO , 'user Unfollowed !')
                 
                 
     return render ( request , 'poroje/liked_posts.html' , {
@@ -1234,7 +1232,8 @@ def unlike(request,post_id):
     like = Post_Likes.objects.filter(writer = user).filter(post__id=post_id)
     like.delete()
     messages.add_message(request, messages.SUCCESS, 'post was unliked !')
-    return redirect('/post_urls/liked_posts')
+    #return redirect('/post_urls/liked_posts')
+    return ( Liked_Posts(request) )
 
 
 

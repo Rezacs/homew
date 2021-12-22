@@ -52,7 +52,8 @@ urlpatterns = [
     path('post_list_2',PostListFilter.as_view() , name='seri_post_list'), 
     path('comment_create_get',DRF_Create_comment.as_view()),
     path('post_detail_2/<int:input_id>',post_detail_2, name='seri_post_detail'), #
-    path('post_detail_HW18/<int:input_id>',post_detail_update_delete, name='seri_post_detail_HW18'),
+    path('post_detail_HW18/<int:id>',post_detail_update_delete, name='seri_post_detail_HW18'),
+    path('HW19/<int:id>',post_detail_update_delete, name='HW19'),
     path('post_urls/', include('post.urls')),
     path("class_category_posts/gslug/<str:given_slug>", class_post_slug_view , name='post-slug-view'),
     # path('maktab-view', MaktabView.as_view()),
