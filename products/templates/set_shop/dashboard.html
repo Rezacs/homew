@@ -30,8 +30,8 @@
                     <small>{{followings.count}}</small>
                 </div>
                 <div class="col-md-3" style="border: solid orange; margin: 15px; background-color: cornflowerblue;">
-                    Posts :
-                    <small>{{posts.count}}</small>
+                    shops :
+                    <small>{{shops.count}}</small>
                 </div>
             </div>
             <h1>dashboard</h1>
@@ -83,10 +83,6 @@
                 <small>see liked posts</small>
             </a>
 
-            <a class="btn btn-sm btn-primary" href="onlineshop/dashboard" style="margin-top: 30px;">
-                <small>Shop Dashboard</small>
-            </a>
-
         </div>
     </div>
 </div>
@@ -94,37 +90,46 @@
 
 
     <hr>
-    {% for post in posts %}
-        <h1>title :{{post.title}}</h1>
-        <p>short desc : {{post.shortdesc}}</p>
-        <small>{{post.created_on}}</small>
-        <!-- <h3>{{post.tag}}</h3> -->
-        <p>
-            <small>tags :</small>
-            {% for t in post.tag.all  %}
-            {{t}}-
-            {% endfor %}
-        </p>
-        <p>
-            <a href="class_post_detail/{{post.id}}">show detail</a>
-            <br>
-            <a href="class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
-        </p>
+    {% if shops %}
+    
+        {% for shop in shops %}
+            <h1>title :{{shop.name}}</h1>
+            <p>short desc : {{post.shortdesc}}</p>
+            <small>{{post.created_on}}</small>
+            <!-- <h3>{{post.tag}}</h3> -->
+            <p>
+                <small>tags :</small>
+                {% for t in shop.tag.all  %}
+                {{t}}-
+                {% endfor %}
+            </p>
+            <p>
+                <a href="class_post_detail/{{post.id}}">show detail</a>
+                <br>
+                <a href="class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
+            </p>
 
-        
-        <p>
-            <a class="btn btn-sm btn-primary" href="post_urls/edit_post/{{post.id}}">
-                <small>edit Post</small>
-            </a>
-        </p>
-        <p>
-            <a class="btn btn-sm btn-danger" href="post_urls/delete_post/{{post.id}}">
-                <small>Delete Post</small>
-            </a>
-        </p>
+            
+            <p>
+                <a class="btn btn-sm btn-primary" href="view_shop/{{shop.id}}">
+                    <small>View Shop informations</small>
+                </a>
+            </p>
+            <p>
+                <a class="btn btn-sm btn-danger" href="post_urls/delete_post/{{post.id}}">
+                    <small>Delete Shop</small>
+                </a>
+            </p>
 
-        <hr>
-    {% endfor %}
+            <hr>
+        {% endfor %}
+
+    {% else %}
+            <h1 style="color: crimson;">No Shops yet , Click below to add some ... : </h1>
+            <a class="btn btn-sm btn-primary" href="add_shop">
+                <small>Add shop</small>
+            </a>
+    {% endif %}
     
       
 {% endblock content %}
