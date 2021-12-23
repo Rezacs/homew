@@ -59,3 +59,5 @@ def post_comments_detail_2(request , comment_id):
     return Response(data = serializer.data , status=200)
 
 #FINAL_PROJECT
+
+
