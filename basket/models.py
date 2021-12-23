@@ -3,6 +3,7 @@ from django.db.models.fields import IntegerField
 
 from customer.models import *
 from products.models import *
+from django.contrib.auth import get_user_model
 
 # class Basket ( models.Model ) :
 #     products = models.ForeignKey(Products, on_delete=models.CASCADE)
@@ -48,18 +49,10 @@ from products.models import *
 
 class Basket2 ( models.Model ) :
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    owner = models.ForeignKey(get_user_model() , on_delete=models.PROTECT , blank=True , null=True)
     order_date = models.DateTimeField(auto_now_add=True)
-    SHIPPMENT_CHOICES = [ 
-        ('pey' , 'peyk_motori'),
-        ('pos' , 'post'),
-        ('dgp' , 'digikala_post'),
-    ]
-    shippment = models.CharField(
-        max_length=3,
-        choices=SHIPPMENT_CHOICES
-    )
     def __str__(self) -> str:
-        return f"{self.customer} factor on {self.order_date}"
+        return f"{self.owner} factor on {self.order_date}"
 
 class Basket2Item ( models.Model ) :
     product = models.ForeignKey(Products, on_delete=models.CASCADE)

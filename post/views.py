@@ -780,6 +780,28 @@ def edit_category_form ( request , category_id ) :
             return redirect(reverse('category-list')) #app_name : url name
     return render ( request , 'poroje/edit_category.html',{'form' : form , 'category' : category})
 
+# edit category with class :
+
+
+from django.views.generic.edit import UpdateView
+  
+class GeeksUpdateView(UpdateView):
+    # specify the model you want to use
+    model = Category
+    template_name = 'poroje/edit_category.html'
+    # specify the fields
+    #form_class = CategoryModelForm( )
+    fields = [
+        "name",
+        "parent"
+    ]
+  
+    # can specify success url
+    # url to redirect after successfully
+    # updating details
+    success_url ="/"
+##
+
 
 @login_required(login_url='login-mk')
 def delete_category_form(request , category_id) :

@@ -55,6 +55,8 @@ urlpatterns = [
     path('post_detail_HW18/<int:id>',post_detail_update_delete, name='seri_post_detail_HW18'),
     path('HW19/<int:id>',post_detail_update_delete, name='HW19'),
     path('post_urls/', include('post.urls')),
+    #FINAL_PROJECT :
+    path('onlineshop/', include('products.urls')),
     path("class_category_posts/gslug/<str:given_slug>", class_post_slug_view , name='post-slug-view'),
     # path('maktab-view', MaktabView.as_view()),
     # path('maktab-list',ListPostView.as_view())

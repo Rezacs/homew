@@ -48,4 +48,6 @@ urlpatterns = [
     #HW19
     path('post/<int:id>/', PostDetailUpdateDeleteView.as_view(), name='post_detail'),
     path('post_create', PostListCreate.as_view(), name='post_create'),
+    # 2 dey
+    path('edit_category/<int:pk>', GeeksUpdateView.as_view(), name='edit_category'),
 ]+ static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
