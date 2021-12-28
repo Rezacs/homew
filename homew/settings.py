@@ -174,3 +174,42 @@ SIMPLE_JWT = {
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
+
+# LOGGING ={
+#     'version':1,
+#     #'disable_existing_loggers': True ,
+#     'loggers':{
+#         'django':{
+#             'level':'DEBUG',
+#             'handlers':['file','file2']
+#         }
+#     },
+#     'handlers':{
+#         'file':{
+#             'level':'INFO',
+#             'class':'logging.FileHandler',
+#             'filename':'./logs/debug5.log',
+#             'formatter':'simpleRe',
+#         },
+#         'file2':{
+#             'level':'ERROR',
+#             'class':'logging.FileHandler',
+#             'filename':'./logs/error.log',
+#             'formatter':'errorFormat',
+#         }
+#     },
+#     'formatters':{
+#         'simpleRe':{
+#             'format':'{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+#             'style':'{',   # ya { ya $ ya #
+#         },
+#         'errorFormat':{
+#             'format':'{asctime} {message}',
+#             'style':'{',
+#         }
+#     }
+# }
+
+# django commands !
+# django signals !
+# django site map !
