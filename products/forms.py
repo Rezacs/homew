@@ -32,23 +32,23 @@ class TagDeleteModelForm (forms.ModelForm) :
         model = Tag
         fields = "__all__"
 
-class CommentModelForm ( forms.ModelForm ) :
-    class Meta :
-        model = Post_Comments
-        fields = ['title' , 'body']
-        labels = {
-            'title' : 'onvaan',
-            'body' : 'tozihat',
-        }
-        error_messages = {
-            'title' : {
-                'max_length' : _('this writer name is too long '),
-                'required' : _('this field is required required !'),
-            },
-        }
-        help_texts = {
-            'title' : _('esme titleto bezaaan ! '),
-        }
+# class CommentModelForm ( forms.ModelForm ) :
+#     class Meta :
+#         model = Post_Comments
+#         fields = ['title' , 'body']
+#         labels = {
+#             'title' : 'onvaan',
+#             'body' : 'tozihat',
+#         }
+#         error_messages = {
+#             'title' : {
+#                 'max_length' : _('this writer name is too long '),
+#                 'required' : _('this field is required required !'),
+#             },
+#         }
+#         help_texts = {
+#             'title' : _('esme titleto bezaaan ! '),
+#         }
 
 class SendMessageForm( forms.ModelForm) :
     class Meta :
@@ -126,15 +126,15 @@ class CategoryModelForm (forms.ModelForm ) :
         model = Category
         fields = "__all__"  # ['name']
 
-class LikePostForm (forms.ModelForm) :
-    class Meta :
-        model = Post_Likes
-        fields = []
+# class LikePostForm (forms.ModelForm) :
+#     class Meta :
+#         model = Post_Likes
+#         fields = []
 
-class LikeCommentForm (forms.ModelForm) :
-    class Meta :
-        model = Post_Comment_likes
-        fields = []
+# class LikeCommentForm (forms.ModelForm) :
+#     class Meta :
+#         model = Post_Comment_likes
+#         fields = []
 
 #----------------------------------------
 
@@ -142,4 +142,37 @@ class AddShopForm (forms.ModelForm) :
     class Meta :
         model = Shop
         exclude = ['status' , 'owner' , 'customer' , 'admin_description' , 'created_on']
+
+class AddProductForm (forms.ModelForm) :
+    class Meta :
+        model = Products
+        exclude = ['shop']
+
+class ProductCommentModelForm ( forms.ModelForm ) :
+    class Meta :
+        model = Products_Comments
+        fields = ['title' , 'body']
+        labels = {
+            'title' : 'onvaan',
+            'body' : 'tozihat',
+        }
+        error_messages = {
+            'title' : {
+                'max_length' : _('this writer name is too long '),
+                'required' : _('this field is required required !'),
+            },
+        }
+        help_texts = {
+            'title' : _('esme titleto bezaaan ! '),
+        }
+
+class LikeProductForm (forms.ModelForm) :
+    class Meta :
+        model = Products_Likes
+        fields = []
+
+class LikeProductCommentForm (forms.ModelForm) :
+    class Meta :
+        model = Products_Comment_likes
+        fields = []
 

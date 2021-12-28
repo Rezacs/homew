@@ -1,0 +1,14 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        <span style="color: red;">{{product.name}}</span>
+        <div class="col-md-12 my-3">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" , value="bezan berim daa!">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

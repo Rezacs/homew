@@ -46,24 +46,35 @@ from django.contrib.auth import get_user_model
 
 #--------------------------
 
+from django.contrib.auth import get_user_model
 
-class Basket2 ( models.Model ) :
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+class Basket ( models.Model ) :
+    # customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     owner = models.ForeignKey(get_user_model() , on_delete=models.PROTECT , blank=True , null=True)
+    created_date = models.DateTimeField(auto_now_add=True)
     order_date = models.DateTimeField(auto_now_add=True)
+    STATUS_CHOICES = [ 
+        ('live' , 'live_basket_now'),
+        ('past' , 'payed and cheked'),
+        ('done' , 'finished basket'),
+    ]
+    status = models.CharField(
+        max_length=4,
+        choices=STATUS_CHOICES
+    )
     def __str__(self) -> str:
         return f"{self.owner} factor on {self.order_date}"
 
-class Basket2Item ( models.Model ) :
+class BasketItem ( models.Model ) :
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
-    Basket = models.ForeignKey(Basket2, on_delete=models.CASCADE)
-    order_date = models.DateTimeField(auto_now_add=True)
+    basket = models.ForeignKey(Basket, on_delete=models.CASCADE)
+    added_date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
-        return f"{self.product} factor on {self.order_date}"
+        return f"{self.product} factor {self.added_date}"
 
-class Order2 ( models.Model ) :
-    baskets = models.ForeignKey(Basket2, on_delete=models.CASCADE , default=None)
+class Order ( models.Model ) :
+    basket = models.ForeignKey(Basket, on_delete=models.CASCADE , default=None)
     desc = models.TextField(blank=True , help_text="Enter a description for your selected prod.")
     date_created = models.DateTimeField(auto_now_add=True)
     shipping_date = models.DateTimeField()
@@ -79,8 +90,8 @@ class Order2 ( models.Model ) :
     def __str__(self) -> str:
         return f"{self.baskets}"
 
-class Email_response2 ( models.Model ) :
-    order = models.ForeignKey(Order2, on_delete=models.CASCADE)
+class Email_response ( models.Model ) :
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
     desc = models.TextField(blank=True , help_text="Enter a description for your selected prod.")
     date_sent = models.DateTimeField(auto_now_add=True)
     seller_response = models.CharField(max_length=300)

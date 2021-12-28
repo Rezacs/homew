@@ -4,17 +4,32 @@
 
 {% block content %}
     <div class="col-md-12">
+        <p>
+            <h1 style="color: rgb(207, 37, 207);">Shop page </h1>
+        {% if request.user == post.owner %}
+            <a class="btn btn-sm btn-primary" href="/onlineshop/edit_shop/{{post.id}}">
+                <small>Edit Shop informations</small>
+            </a>
+        {% endif %}
+        </p>
+        {% comment %} {% if post.status == "rejc" %}
+            <div class="row" style="height: 100%; color: solid red;">
+        {% elif post.status=='chek' %}
+            <div class="row" style="height: 100%; color: solid rgb(14, 131, 24);">
+        {% elif post.status=='load' %}
+            <div class="row" style="height: 100%; color: solid rgb(243, 223, 42);">
+        {% endif %} {% endcomment %}
         <div class="row" style="height: 100%;">
             <div class="col-md-6">
                 {% if post.image %}
-                    <img src="{{post.image.url}}" alt="image_of_post" style="width: 800px; height: 800px; border: solid red;">
+                    <img src="{{post.image.url}}" alt="image_of_post" style="width: 400px; height: 400px; border: solid red;">
                 {% else %}
                     <img src="{% static 'download.jpeg' %}" alt="image_of_post" style=" border: solid red;">
                 {% endif %}
             </div>
             <div class="col-md-6">
                 <h1>title : {{post.name}}</h1>
-                <a href="/user/{{post.writer}}"><h2>user : {{post.owner}}</h2></a>
+                <a href="/user/{{post.owner}}"><h2>user : {{post.owner}}</h2></a>
                 <p>shortdesc : {{post.shortdesc}}</p>
                 <small>{{post.created_on}}</small>
                 <br>
@@ -50,8 +65,11 @@
     categorys :
     {% for t in post.category.all  %}
         <a href="/class_category_detail/{{t.id}}">{{t}}</a>-
-
     {% endfor %}
+    <hr>   
+    {% if request.user == post.owner %}
+        admin comment : {{post.admin_description}}
+    {% endif %}
     <hr>
     <div class="container">
         <div class="col-md-12 my-3">
@@ -88,8 +106,53 @@
     </div>
     <hr>
     <hr>
-
-    <h1> comments : count = {{comments.count}} </h1>
+    Products :
+        <div class="col-md-12 ">
+            <div class="row mt-1 g-3 btn-light " style="height: 100%;">
+                {% for product in products %}
+                    <div class="col-md-3 " style="height: auto; ">
+                        <div class="card h-100" >
+                            <div style="justify-content: center;"> 
+                                {% if product.image %}
+                                    <img src="{{product.image.url}}" alt="image_of_post" style="width: 100px; height: 100px; border: solid red; margin-top: 5px;">
+                                {% else %}
+                                    <img src="{% static 'download.jpeg' %}" alt="image_of_post" style="width: 100px; height: 100px; border: solid red;margin-top: 5px;">
+                                {% endif %}
+                            </div>
+                            <br>
+                            <h1>{{product.name}}</h1>
+                            <p>desc : {{product.desc}}</p>
+                            <small>{{product.created_on | date}}</small>
+                            <!-- <h3>{{post.tag}}</h3> -->
+                            <p>
+                                tags :
+                                {% for t in post.tag.all  %}
+                                    {{t}}-
+                                {% endfor %}
+                            </p>
+                            <small>
+                                <p>
+                                        <a href="/onlineshop/product_detail/{{product.id}}">show detail</a>
+                                    <br>
+                                        <a href="class_category_posts/gslug/{{product.slug}}">show detail via SLUG </a>
+                                </p>
+                            </small>
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <p>
+            {% if request.user == post.owner %}
+                <a class="btn btn-sm btn-primary" href="/onlineshop/add_product/{{post.id}}">
+                    <small>Add product to your shop</small>
+                </a>
+            {% endif %}
+        </p>
+    <h1> 
+        comments : count = {{comments.count}} 
+    </h1>
     <hr>
     {% for comment in comments %}
         <h1 style="color: brown;">customer :{{comment.customer}}</h1>

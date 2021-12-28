@@ -1,0 +1,14 @@
+{% extends "class_base.html" %}
+
+{% block content %}
+    <div class="container">
+        safhe ye sabt e addresse jadid 
+        <div class="col-md-12 my-3">
+            <form action="" enctype='multipart/form-data' method="post" >
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" , value="register">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

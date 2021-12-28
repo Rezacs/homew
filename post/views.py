@@ -1257,6 +1257,58 @@ def unlike(request,post_id):
     #return redirect('/post_urls/liked_posts')
     return ( Liked_Posts(request) )
 
+@login_required(login_url='login-mk')
+def addresses (request ):
+    
+    user = User.objects.get(username=request.user.username)  
+    customer = Customer.objects.get(user_name =user.username)
+    addresses = Address.objects.filter(customer = customer )
+    
+    return render ( request , 'poroje/addresses.html' , {
+        'user':user,
+        'addresses' : addresses
+    })
+
+@login_required(login_url='login-mk')
+def add_address (request) :
+    form = AddressForm(None or request.POST , request.FILES)
+    if request.method == "POST" :
+        if form.is_valid() :
+            bad_post = form.save(commit=False)
+            bad_post.customer = Customer.objects.get(user_name=request.user.username)
+            form.save()
+            messages.add_message(request, messages.INFO , 'new address was saved !')
+            return redirect(reverse('Addresses'))
+
+    return render (request , 'forms/new_address.html' , {'form' : form })
+
+@login_required(login_url='login-mk')
+def edit_address ( request , id ) :
+    specified_address = get_object_or_404(Address , id = id )
+    form = AddressForm(instance=specified_address)
+    if request.method == "POST" :
+        if request.user.username == specified_address.customer.user_name :
+            form = AddressForm(request.POST , request.FILES , instance=specified_address)
+            if form.is_valid() :
+                # print(form)
+                form.save()
+                messages.add_message(request, messages.SUCCESS, 'address edit was edited !')
+                return redirect('/post_urls/addresses')
+        else :
+            return HttpResponse('you dont have permission to do this !')
+    return render ( request , 'forms/edit_address.html',{'form' : form , 'specified_post' : specified_address})
+
+@login_required(login_url='login-mk')
+def delete_address(request , id) :
+    address = get_object_or_404(Address , id = id )
+    customer = Customer.objects.get(user_name = request.user.username)
+    if request.user.username == address.customer.user_name :
+        address.delete()
+        messages.add_message(request, messages.INFO , 'address was deleted !')
+        return redirect('/post_urls/addresses')
+    else :
+        return HttpResponse('you dont have permission to do this !')
+
 
 
         

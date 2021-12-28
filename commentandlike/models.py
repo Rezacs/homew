@@ -24,8 +24,10 @@ class Products_Likes ( CommonInfo ,models.Model ) :
         unique_together = [['customer' , 'products']]
 
 class Products_Comments ( CommonInfo ,models.Model ) :
-    body = models.CharField(max_length=300)
+    body = models.TextField(max_length=300)
     products = models.ForeignKey(Products, on_delete=models.CASCADE)
+    title = models.CharField(max_length=300 , blank=True , null=True)
+    parent = models.ForeignKey( 'self' , default=None , null=True , blank=True,on_delete=models.CASCADE)
     # customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     # date_added = models.DateTimeField(auto_now_add=True)
 

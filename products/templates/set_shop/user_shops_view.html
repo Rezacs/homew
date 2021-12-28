@@ -1,0 +1,78 @@
+{% extends "class_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <h1 style="color: rgb(128, 20, 230);">Shop Page ! </h1>
+    <div class="row" style="height: 100%;">
+        <div class="col-md-6">
+            {% if customer.image %}
+                <p>
+                    profile picture :
+                </p>
+                <img src="{{customer.image.url}}" alt="image_of_post" style="width: 400px; height: 400px; border: solid red;">
+            {% else %}
+                <p>
+                    Default profile picture :
+                </p>
+                <img src="{% static 'download.jpeg' %}" alt="image_of_post" style=" border: solid red;">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-3" style="border: solid orange; margin: 15px; height: 90px; background-color: cornflowerblue;">
+                    <a href="/followersandfollowings/{{pointed_user.username}}">Followers :</a>
+                    <small>{{followers.count}}</small>
+                </div>
+                <div class="col-md-3" style="border: solid orange; margin: 15px; background-color: cornflowerblue;">
+                    Followings :
+                    <small>{{followings.count}}</small>
+                </div>
+                <div class="col-md-3" style="border: solid orange; margin: 15px; background-color: cornflowerblue;">
+                    shops :
+                    <small>{{shops.count}}</small>
+                </div>
+            </div>
+            <h2>username : {{pointed_user.username}}</h2>
+
+            <h5>
+                <p>
+                    <small>
+                    discription about this user :
+                    </small>
+                </p>
+                <p>
+                    {{customer.desc}}
+                </p>
+            </h5>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+    <hr>
+    {% if shops %}
+    
+        {% for shop in shops %}
+            <h1>title :{{shop.name}}</h1>
+            <p>short desc : {{shop.desc}}</p>
+            <small>{{shop.created_on}}</small>
+            
+            <p>
+                <a class="btn btn-sm btn-primary" href="/onlineshop/view_shop/{{shop.id}}">
+                    <small>View Shop informations</small>
+                </a>
+            </p>
+
+        {% endfor %}
+
+    {% else %}
+            <h1 style="color: crimson;">No Shops yet ! </h1>
+    {% endif %}
+    
+      
+{% endblock content %}

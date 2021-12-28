@@ -5,6 +5,7 @@
 {% block content %}
 
 <div class="col-md-12">
+    <h1 style="color: rgb(128, 20, 230);">Shop dashboard</h1>
     <div class="row" style="height: 100%;">
         <div class="col-md-6">
             {% if customer.image %}
@@ -34,7 +35,6 @@
                     <small>{{shops.count}}</small>
                 </div>
             </div>
-            <h1>dashboard</h1>
             <h2>username : {{user.username}}</h2>
 
             <h5>
@@ -48,41 +48,9 @@
                 </p>
             </h5>
             <hr>
-
-            <a class="btn btn-sm btn-primary" href="post_urls/personal_info">
-                <small>edit personal info</small>
+            <a class="btn btn-sm btn-primary" href="add_shop">
+                <small>Add shop</small>
             </a>
-
-            <a class="btn btn-sm btn-dark" href="post_urls/drafteds">
-                <small>draft posts</small>
-            </a>
-
-            <a class="btn btn-sm btn-primary" href="post_urls/new_password">
-                <small>change password</small>
-            </a>
-            
-            <br>
-
-            <a class="btn btn-sm btn-primary" href="post_urls/new_post" style="margin-top: 30px;">
-                <small>NEW POST</small>
-            </a>
-
-            <a class="btn btn-sm btn-danger" href="post_urls/edit_username" style="margin-top: 30px;">
-                <small>edit username</small>
-            </a>
-
-            <a class="btn btn-sm btn-warning" href="post_urls/inbox" style="margin-top: 30px;">
-                <small>see messages</small>
-            </a>
-
-            <a class="btn btn-sm btn-light" href="post_urls/notify_followers" style="margin-top: 30px;">
-                <small>notify all followers</small>
-            </a>
-
-            <a class="btn btn-sm btn-light" href="post_urls/liked_posts" style="margin-top: 30px;">
-                <small>see liked posts</small>
-            </a>
-
         </div>
     </div>
 </div>
@@ -94,21 +62,8 @@
     
         {% for shop in shops %}
             <h1>title :{{shop.name}}</h1>
-            <p>short desc : {{post.shortdesc}}</p>
-            <small>{{post.created_on}}</small>
-            <!-- <h3>{{post.tag}}</h3> -->
-            <p>
-                <small>tags :</small>
-                {% for t in shop.tag.all  %}
-                {{t}}-
-                {% endfor %}
-            </p>
-            <p>
-                <a href="class_post_detail/{{post.id}}">show detail</a>
-                <br>
-                <a href="class_category_posts/gslug/{{post.slug}}">show detail via SLUG </a>
-            </p>
-
+            <p>short desc : {{shop.desc}}</p>
+            <small>{{shop.created_on}}</small>
             
             <p>
                 <a class="btn btn-sm btn-primary" href="view_shop/{{shop.id}}">
@@ -116,7 +71,7 @@
                 </a>
             </p>
             <p>
-                <a class="btn btn-sm btn-danger" href="post_urls/delete_post/{{post.id}}">
+                <a class="btn btn-sm btn-danger" href="/onlineshop/delete_shop/{{shop.id}}">
                     <small>Delete Shop</small>
                 </a>
             </p>

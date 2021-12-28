@@ -186,3 +186,8 @@ class CustomerEditForm (forms.ModelForm) :
         model = Customer
         exclude = ['user_name' , 'email']
 
+class AddressForm (forms.ModelForm) :
+    class Meta :
+        model = Address
+        exclude = ['customer']
+

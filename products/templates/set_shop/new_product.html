@@ -1,0 +1,16 @@
+{% extends "class_base.html" %}
+
+{% comment %} {% url 'Add_product' ids=shop.id %} {% endcomment %}
+
+{% block content %}
+    <div class="container">
+        safhe ye sabt e producte jadid 
+        <div class="col-md-12 my-3">
+            <form action="" method="post" enctype='multipart/form-data'> 
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" , value="register">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -50,4 +50,9 @@ urlpatterns = [
     path('post_create', PostListCreate.as_view(), name='post_create'),
     # 2 dey
     path('edit_category/<int:pk>', GeeksUpdateView.as_view(), name='edit_category'),
+    #6 dey
+    path('addresses' , addresses ,name='Addresses' ),
+    path('new_address' , add_address ,name='New-Address' ),
+    path('delete_address/<int:id>', delete_address , name='delete-address'),
+    path('edit_address/<int:id>', edit_address , name='edit-address'),
 ]+ static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
