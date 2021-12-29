@@ -76,7 +76,7 @@ from django.views.generic import TemplateView,ListView,DetailView
 @login_required(login_url='login-mk')
 def shop_dashboard ( request ) :
     user = request.user
-    shops = Shop.objects.filter(owner = user)
+    shops = Shop.not_deleted.filter(owner = user)
     customer = Customer.objects.get(user_name=user.username)
     followers = UserConnections.objects.filter(follower=user)
     followings = UserConnections.objects.filter(following=user)
@@ -297,7 +297,7 @@ def add_product_comment ( request , comment_id ) :
 
 def shop_page_view ( request , username ) :
     pointed_user = User.objects.get(username = username)
-    shops = Shop.objects.filter(owner = pointed_user)
+    shops = Shop.not_deleted.filter(owner = pointed_user)
     customer = Customer.objects.get(user_name=username)
     followers = UserConnections.objects.filter(follower=pointed_user)
     followings = UserConnections.objects.filter(following=pointed_user)

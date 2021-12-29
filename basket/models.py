@@ -62,6 +62,20 @@ class Basket ( models.Model ) :
         max_length=4,
         choices=STATUS_CHOICES
     )
+    address = models.ForeignKey( Address , on_delete=models.PROTECT , blank=True , null=True)
+    price = models.PositiveIntegerField( blank=True, null=True)
+
+    def calculate ( obj ) :
+        sum = 0
+        items = BasketItem.objects.filter(basket = obj )
+        for item in items :
+            sum += ( item.price * item.quantity )
+        return sum
+
+    def save(self , *args , **kwargs) :
+        self.price = self.calculate()
+        super(Shop,self).save(*args , **kwargs)
+
     def __str__(self) -> str:
         return f"{self.owner} factor on {self.order_date}"
 

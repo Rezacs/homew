@@ -9,7 +9,8 @@ from random import randint
 
 class NotDeletedShops(models.Manager):
     def get_queryset(self):
-        return super(NotDeletedShops , self).get_queryset().filter( Q(status ='chek') | Q(status='load') | Q(status='rejc') )
+        #return super(NotDeletedShops , self).get_queryset().filter( Q(status ='chek') | Q(status='load') | Q(status='rejc') )
+        return super(NotDeletedShops , self).get_queryset().exclude( status ='dele')
 
 class AcceptedShops(models.Manager):
     def get_queryset(self):
