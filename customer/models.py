@@ -1,7 +1,45 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.base_user import BaseUserManager
 
-# Create your models here.
+
+# class MyUserManager ( BaseUserManager ) :
+#     def create_user ( self , mobile , password = None , **other_fields ) :
+#         if not mobile :
+#             raise ValueError ( 'Mobile is required .. !')
+#         user = self.model(mobile = mobile , **other_fields )
+#         user.set_password ( password )
+#         user.save()
+
+#     def create_superuser ( self , mobile , password=None , **other_fields ) :
+#         other_fields.setdefault('is_staff' , True)
+#         other_fields.setdefault('is_superuser' , True)
+#         other_fields.setdefault('is_active' , True)
+
+#         if other_fields.get('is_staff') is not True :
+#             raise ValueError ('Superuser must have is_staff=True')
+#         if other_fields.get('is_superuser') is not True :
+#             raise ValueError ('Superuser must have is_superuser=True')
+#         return self.create_user( mobile , password , **other_fields )
+
+
+# class MyUser ( AbstractUser ) :
+#     username = None
+#     mobile = models.CharField(max_length=11 , unique=True)
+#     otp = models.PositiveIntegerField(blank=True , null=True)
+#     otp_created_time = models.DateTimeField(auto_now=True)
+
+#     objects = MyUserManager()
+
+#     USERNAME_FIELD = 'mobile'
+
+#     REQUIRED_FIELDS = []
+
+#     backend = ''
+
+
+# ------------------------------------------------------
 
 class Customer ( models.Model ) :
     GENDER_CHOICES = [ 
