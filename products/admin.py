@@ -60,7 +60,28 @@ class ShopAdmin(admin.ModelAdmin) :
 
     actions = [make_verified]
 
-admin.site.register(Products)
+class ProductAdmin(admin.ModelAdmin) :
+    list_display = ('name' ,'desc', 'shop' , 'price','quantity' , 'show_image' , 'created_on')
+    list_filter = ( 'price' , 'created_on' , 'shop' , 'category')
+    search_fields = ('name' ,)
+    date_hierarchy = ('created_on')
+
+    list_per_page = 100
+
+    @admin.display(empty_value='???' , description= 'show image')
+    def show_image(self,obj) :
+        if (obj.image) :
+            print(obj.image.url)
+
+            return format_html(
+                '<img src="{}" width=50 height=50 />' ,
+                obj.image.url ,
+            )
+        return '-'
+
+
+
+admin.site.register(Products , ProductAdmin)
 admin.site.register(Shop , ShopAdmin)
 
 # Register your models here.
